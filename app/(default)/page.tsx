@@ -9,6 +9,7 @@ import FeaturesBlocks from "@/components/features-blocks";
 import Testimonials from "@/components/testimonials";
 import Newsletter from "@/components/newsletter";
 import Shorts from "@/components/shorts";
+import Zigzag from "@/components/zigzag";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Shorts />
       <FeaturesBlocks />
+      <Zigzag />
       {/* <Features /> */}
       {/* <Testimonials /> */}
       <Newsletter />

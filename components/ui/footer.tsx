@@ -183,7 +183,7 @@ export default function Footer() {
             <li>
               <a
                 href="#0"
-                className="flex justify-center items-center text-[#858BA0] hover:text-[#006AFF] bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
+                className="flex justify-center items-center text-[#858BA0] hover:text-white bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
                 aria-label="Twitter"
               >
                 <svg
@@ -198,7 +198,7 @@ export default function Footer() {
             <li className="ml-4">
               <a
                 href="#0"
-                className="flex justify-center items-center text-[#858BA0] hover:text-[#006AFF] bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
+                className="flex justify-center items-center text-[#858BA0] hover:text-white bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
                 aria-label="Github"
               >
                 <svg
@@ -213,7 +213,7 @@ export default function Footer() {
             <li className="ml-4">
               <a
                 href="#0"
-                className="flex justify-center items-center text-[#858BA0] hover:text-[#006AFF] bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
+                className="flex justify-center items-center text-[#858BA0] hover:text-white bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
                 aria-label="Facebook"
               >
                 <svg

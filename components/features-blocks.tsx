@@ -12,7 +12,7 @@ export default function FeaturesBlocks() {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-4xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4 text-white">AI Automation Magic</h2>
+            <h2 className="h2 mb-4">AI Automation Magic</h2>
             <p className="text-lg text-[#858BA0]">
               You upload videos to your channel as usual <br /> We process them,
               find the best parts that can become viral and than create,

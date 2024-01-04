@@ -9,6 +9,28 @@ export default function Hero() {
     "/images/android.png",
   ];
 
+  document.addEventListener("DOMContentLoaded", function () {
+    // mute function
+    const video: HTMLVideoElement | null = document.getElementById(
+      "video"
+    ) as HTMLVideoElement;
+    const mute: HTMLButtonElement | null = document.querySelector(
+      ".mute"
+    ) as HTMLButtonElement;
+
+    if (video && mute) {
+      mute.addEventListener("click", function () {
+        if (video.muted === false) {
+          video.muted = true;
+          mute.innerHTML = "unmute";
+        } else {
+          video.muted = false;
+          mute.innerHTML = "mute";
+        }
+      });
+    }
+  });
+
   return (
     <section className="relative md:h-[100svh] md:flex md:flex-col md:justify-between md:items-center md:px-16 md:py-6">
       {/* Illustration behind hero content */}
@@ -271,6 +293,7 @@ export default function Hero() {
 
             {/* Desktop */}
             <div className="desktop h-full w-full">
+              <button className="btn mute text-white">mute</button>
               {/* Horizontal */}
               <div
                 className="bg-zinc-900 w-[550px] rounded-xl overflow-hidden"
@@ -282,7 +305,13 @@ export default function Hero() {
                 //     "0px 0px 0px 1px rgba(0, 106, 255, 0.5), 0px 0px 0px 2px rgba(0, 106, 255, 0.25), 0px 0px 0px 3px rgba(0, 106, 255, 0.15)",
                 // }}
               >
-                <video src="/videos/opus.mp4" autoPlay muted loop></video>
+                <video
+                  id="video"
+                  src="/videos/opus.mp4"
+                  autoPlay
+                  muted
+                  loop
+                ></video>
               </div>
             </div>
 
