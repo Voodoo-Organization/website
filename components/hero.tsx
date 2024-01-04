@@ -48,7 +48,7 @@ export default function Hero() {
           <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-16">
             {/* Section header */}
             <div className="text-center md:text-start w-full">
-              <div className="flex flex-row gap-2 items-center justify-center w-full mb-4">
+              <div className="flex flex-row gap-2 items-center justify-center md:justify-start w-full mb-4">
                 <h1
                   className="text-3xl md:text-4xl font-bold text-white tracking-wider"
                   data-aos="zoom-y-out"
