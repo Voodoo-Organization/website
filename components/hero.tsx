@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="max-w-[90%] mx-auto px-4 sm:px-6">
         {/* Hero content */}
         <div className="flex flex-col justify-between">
-          <div className="pt-24 md:pt-24 md:flex md:flex-row md:items-center gap-24">
+          <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-24">
             {/* Section header */}
             <div className="text-center md:text-start pb-12 md:pb-16 md:min-w-[550px]">
               <h1
@@ -55,9 +55,11 @@ export default function Hero() {
                   data-aos="zoom-y-out"
                   data-aos-delay="150"
                 >
-                  Reach more people by doing less work. <br /> Let Voodoo's AI
-                  automation process create, schedule and upload viral clips for
-                  you
+                  Reach more people by doing less work.
+                  <span className="hidden md:block">
+                    <br /> Let Voodoo's AI automation process create, schedule
+                    and upload viral clips for you
+                  </span>
                 </p>
                 <div className="flex flex-row items-center justify-center md:justify-start pb-4 gap-6">
                   <img
@@ -128,7 +130,7 @@ export default function Hero() {
                   </div> */}
 
                   <form>
-                    <div className="flex flex-wrap">
+                    <div className="hidden md:flex flex-wrap">
                       <div className="w-full">
                         <label
                           className="block text-sm sr-only"
@@ -141,7 +143,7 @@ export default function Hero() {
                             id="newsletter"
                             type="url"
                             className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-transparent"
-                            placeholder="Video URL"
+                            placeholder="YouTube Video URL"
                             required
                           />
                           <button
@@ -162,10 +164,8 @@ export default function Hero() {
                         {/* <p className="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> */}
                       </div>
                     </div>
-                  </form>
-
-                  {/* <form>
-                    <div className="flex flex-wrap">
+                    {/* Mobile Version */}
+                    <div className="flex md:hidden flex-wrap">
                       <div className="w-full">
                         <label
                           className="block text-sm sr-only"
@@ -173,41 +173,36 @@ export default function Hero() {
                         >
                           Get Free Clips
                         </label>
-                        <div className="relative flex items-center w-96">
+                        <div className="relative flex items-center md:w-96">
                           <input
                             id="newsletter"
                             type="url"
-                            className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-transparent"
-                            placeholder="Video URL"
+                            className="form-input w-full text-white px-3 py-2 text-sm bg-transparent"
+                            placeholder="YouTube Video URL"
                             required
                           />
+                        </div>
+                        <div className="flex flex-row gap-2 items-center justify-between mt-4">
                           <button
                             type="submit"
-                            className="absolute inset-0 left-auto pl-2"
+                            className="w-full"
                             aria-label="Subscribe"
                           >
-                            <span
-                              className="absolute inset-0 right-auto w-px -ml-px my-2 bg-zinc-800"
-                              aria-hidden="true"
-                            ></span>
-                            <div className="flex flex-row gap-2 items-center">
-                              <p className="text-[#006AFF]">Get Free Clips</p>
-                              <svg
-                                className="w-3 h-3 fill-current text-[#006AFF] mx-3 shrink-0"
-                                viewBox="0 0 12 12"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                                  fillRule="nonzero"
-                                />
-                              </svg>
+                            <div className="flex flex-row justify-center items-center bg-[#006AFF] rounded-full py-2">
+                              <p className="text-white px-4">Get Free Clips</p>
+                            </div>
+                          </button>
+                          <button className="w-full">
+                            <div className="flex flex-row justify-center items-center bg-transparent border border-[#006AFF] rounded-full py-2">
+                              <p className="text-white px-4">Get Free Clips</p>
                             </div>
                           </button>
                         </div>
+                        {/* Success message */}
+                        {/* <p className="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> */}
                       </div>
                     </div>
-                  </form> */}
+                  </form>
 
                   {/* <div>
                     <a
@@ -278,32 +273,15 @@ export default function Hero() {
             </div>
 
             {/* Mobile */}
-            <div className="h-full w-full md:hidden">
+            <div className="h-full w-full md:hidden flex justify-center">
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 w-[225px] h-[155px] rounded-xl overflow-hidden"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  transform: "translate(35%, 35%)",
-                }}
+                className="bg-zinc-900 h-[155px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
                 <video src="/videos/opus.mp4" autoPlay muted loop></video>
               </div>
-              {/* Vertical */}
-              <div
-                className="bg-zinc-900 border-2 border-zinc-800 w-[90px] h-[160px] md:w-[180px] md:h-[320px] rounded-2xl overflow-hidden
-              "
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  transform: "translate(10%, -40%)",
-                }}
-                data-aos="zoom-y-out"
-                data-aos-delay="450"
-              ></div>
             </div>
 
             {/* Hero image */}
@@ -320,7 +298,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex flex-row gap-24 justify-center items-center z-[30] pb-12">
+      <div className="pt-12 md:pt-0 flex flex-row gap-24 justify-center items-center z-[30] pb-12">
         <img
           src="/images/android-tv.png"
           width={120}
