@@ -151,19 +151,26 @@ export default function Hero() {
                           <input
                             id="newsletter"
                             type="url"
-                            className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-transparent"
+                            className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-[#0E1015]"
                             placeholder="YouTube Video URL"
                             required
                           />
                           <button
                             type="submit"
-                            className="btn-text absolute inset-0 left-auto"
+                            className="hero-btn btn-text absolute inset-0 left-auto"
                             aria-label="Subscribe"
                           >
-                            <span
-                              className="absolute inset-0 right-auto w-px -ml-px my-2 bg-zinc-800"
-                              aria-hidden="true"
-                            ></span>
+                            {/* Blue Wave Circles */}
+                            <div className="blue-wave z-[-1] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                              <span className="z-[-1] absolute w-18 h-18 opacity-70 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-24 h-24 opacity-60 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-30 h-30 opacity-50 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-36 h-36 opacity-40 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-42 h-42 opacity-30 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-48 h-48 opacity-20 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-54 h-54 opacity-10 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                            </div>
+
                             <div className="flex flex-row gap-2 items-center bg-[#006AFF] rounded-r-full py-3">
                               <p className="text-white px-4">Get Free Clips</p>
                             </div>
@@ -186,7 +193,7 @@ export default function Hero() {
                           <input
                             id="newsletter"
                             type="url"
-                            className="form-input w-full text-white px-3 py-2 text-sm bg-transparent"
+                            className="form-input w-full text-white px-3 py-3 text-sm bg-transparent"
                             placeholder="YouTube Video URL"
                             required
                           />
@@ -197,12 +204,12 @@ export default function Hero() {
                             className="btn-text w-full"
                             aria-label="Subscribe"
                           >
-                            <div className="flex flex-row justify-center items-center bg-[#006AFF] rounded-full py-2">
+                            <div className="flex flex-row justify-center items-center bg-[#006AFF] rounded-full py-3">
                               <p className="text-white px-4">Get Free Clips</p>
                             </div>
                           </button>
                           <button className="btn-text w-full">
-                            <div className="flex flex-row justify-center items-center bg-zinc-900 rounded-full py-2">
+                            <div className="flex flex-row justify-center items-center bg-zinc-900 rounded-full py-3">
                               <p className="text-[#006AFF] px-4">See Demos</p>
                             </div>
                           </button>
@@ -244,6 +251,11 @@ export default function Hero() {
                 className="bg-zinc-900 w-[550px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
+                // style={{
+                //   // outter glow
+                //   boxShadow:
+                //     "0px 0px 0px 1px rgba(0, 106, 255, 0.5), 0px 0px 0px 2px rgba(0, 106, 255, 0.25), 0px 0px 0px 3px rgba(0, 106, 255, 0.15)",
+                // }}
               >
                 <video src="/videos/opus.mp4" autoPlay muted loop></video>
               </div>

@@ -32,7 +32,7 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* <Logo /> */}
-            <a className="font-extrabold text-[#006AFF] text-xl" href="/">
+            <a className="font-extrabold text-white text-xl" href="/">
               VOODOO
             </a>
           </div>
