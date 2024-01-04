@@ -16,6 +16,8 @@
   }
 }
 
+/* Google Fonts */
+
 /* montserrat */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
@@ -25,9 +27,26 @@
 /* outfit */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
 
+/* From Public Directory */
+@font-face {
+  font-family: "CalSans";
+  src: url("../../public/fonts/webfonts/CalSans-SemiBold.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
 * {
-  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "CalSans", sans-serif;
 }
 
 /* disable scrollbar */
@@ -108,6 +127,27 @@ html::-webkit-scrollbar {
   margin: 0 20px;
 }
 
+.images {
+  overflow: hidden;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.images-slide {
+  display: inline-block;
+  animation: slide 15s infinite linear;
+}
+
+.images-slide {
+  margin: 0 20px;
+}
+
+.images-slide img {
+  height: 30px;
+  width: 100%;
+}
+
 @keyframes slide {
   from {
     transform: translateX(0);
@@ -116,3 +156,36 @@ html::-webkit-scrollbar {
     transform: translateX(calc(-100% * 8));
   }
 }
+
+/* Images Slider */
+/* .slider-images {
+  background: transparent;
+  height: 150px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-track-images {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 5);
+}
+
+.slide-images {
+  height: 30px;
+  width: 250px;
+  margin: 0 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 2.5));
+  }
+} */

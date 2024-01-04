@@ -28,7 +28,7 @@ export default function Shorts() {
           <div className="videos max-w-none w-[100vw] px-0 mx-0">
             <div className="slider">
               {videos.map((video, index) => (
-                <div className="videos-slide" key={`set2-${index}`}>
+                <div className="videos-slide" key={`set1-${index}`}>
                   <div
                     className="videos-slide-video bg-zinc-900 w-[150px] h-[267px] rounded-xl overflow-hidden"
                     data-aos="zoom-y-out"

@@ -34,7 +34,7 @@ export default function FeaturesBlocks() {
               </div>
               <div>
                 <a
-                  className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
+                  className="btn text-[#006AFF] bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
                   href="#0"
                 >
                   Learn more

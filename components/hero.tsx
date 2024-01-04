@@ -1,6 +1,14 @@
 "use client";
 
 export default function Hero() {
+  const logos = [
+    "/images/android-tv.png",
+    "/images/apple-tv.png",
+    "/images/apple-watch.png",
+    "/images/iPhone.png",
+    "/images/android.png",
+  ];
+
   return (
     <section className="relative md:h-[100svh] md:flex md:flex-col md:justify-between md:items-center md:px-16 md:py-6">
       {/* Illustration behind hero content */}
@@ -34,17 +42,17 @@ export default function Hero() {
         </svg>
       </div> */}
 
-      <div className="max-w-[90%] mx-auto px-4 sm:px-6">
+      <div className="max-w-[100%] mx-auto px-4 sm:px-6">
         {/* Hero content */}
         <div className="flex flex-col justify-between">
           <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-24">
             {/* Section header */}
-            <div className="text-center md:text-start pb-12 md:pb-16 md:min-w-[550px]">
+            <div className="text-center md:text-start pb-12 md:pb-16 md:min-w-[550px] w-full">
               <h1
-                className="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 text-white"
+                className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-wider"
                 data-aos="zoom-y-out"
               >
-                1 Video = 10 Shorts{" "}
+                1 Video = 10 Shorts
                 {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
                 wonderful
               </span> */}
@@ -148,7 +156,7 @@ export default function Hero() {
                           />
                           <button
                             type="submit"
-                            className="absolute inset-0 left-auto"
+                            className="btn-text absolute inset-0 left-auto"
                             aria-label="Subscribe"
                           >
                             <span
@@ -185,16 +193,16 @@ export default function Hero() {
                         <div className="flex flex-row gap-2 items-center justify-between mt-4">
                           <button
                             type="submit"
-                            className="w-full"
+                            className="btn-text w-full"
                             aria-label="Subscribe"
                           >
                             <div className="flex flex-row justify-center items-center bg-[#006AFF] rounded-full py-2">
                               <p className="text-white px-4">Get Free Clips</p>
                             </div>
                           </button>
-                          <button className="w-full">
-                            <div className="flex flex-row justify-center items-center bg-transparent border border-[#006AFF] rounded-full py-2">
-                              <p className="text-white px-4">Get Free Clips</p>
+                          <button className="btn-text w-full">
+                            <div className="flex flex-row justify-center items-center bg-zinc-900 rounded-full py-2">
+                              <p className="text-[#006AFF] px-4">See Demos</p>
                             </div>
                           </button>
                         </div>
@@ -298,48 +306,28 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="pt-12 md:pt-0 flex flex-row gap-24 justify-center items-center z-[30] pb-12">
-        <img
-          src="/images/android-tv.png"
-          width={120}
-          alt="brand logo"
-          data-aos="zoom-y-out"
-          data-aos-delay="300"
-          data-aos-offset="-1000"
-        />
-        <img
-          src="/images/apple-tv.png"
-          width={60}
-          alt="brand logo"
-          data-aos="zoom-y-out"
-          data-aos-delay="300"
-          data-aos-offset="-1000"
-        />
-        <img
-          src="/images/apple-watch.png"
-          width={95}
-          alt="brand logo"
-          data-aos="zoom-y-out"
-          data-aos-delay="300"
-          data-aos-offset="-1000"
-        />
-        <img
-          src="/images/iPhone.png"
-          width={75}
-          alt="brand logo"
-          data-aos="zoom-y-out"
-          data-aos-delay="300"
-          data-aos-offset="-1000"
-        />
-        <img
-          src="/images/android.png"
-          width={140}
-          alt="brand logo"
-          data-aos="zoom-y-out"
-          data-aos-delay="300"
-          data-aos-offset="-1000"
-        />
+      <div className="pt-24 flex flex-row gap-24 justify-center items-center z-[30] pb-12 px-6 md:px-0 overflow-x-auto md:overflow-hidden">
+        {logos.map((image, index) => (
+          <img src={image} alt={`Logo ${index + 1}`} width={120} />
+        ))}
       </div>
+
+      {/* <div className="md:hidden">
+        <div className="slider-images">
+          <div className="slide-track-images">
+            {logos.map((image, index) => (
+              <div className="slide-images" key={index}>
+                <img src={image} alt={`Logo ${index + 1}`} />
+              </div>
+            ))}
+            {logos.map((image, index) => (
+              <div className="slide-images" key={index}>
+                <img src={image} alt={`Logo ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */}
     </section>
   );
 }
