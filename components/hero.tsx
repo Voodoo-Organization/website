@@ -48,15 +48,40 @@ export default function Hero() {
           <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-16">
             {/* Section header */}
             <div className="text-center md:text-start w-full">
-              <h1
-                className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-wider"
-                data-aos="zoom-y-out"
-              >
-                1 Video = 10 Shorts
-                {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+              <div className="flex flex-row gap-2 items-center justify-center w-full mb-4">
+                <h1
+                  className="text-3xl md:text-4xl font-bold text-white tracking-wider"
+                  data-aos="zoom-y-out"
+                >
+                  1 Video
+                  {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
                 wonderful
               </span> */}
-              </h1>
+                </h1>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-move-right"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="300"
+                >
+                  <path d="M18 8L22 12L18 16" />
+                  <path d="M2 12H22" />
+                </svg>
+                <h1
+                  className="text-3xl md:text-4xl font-bold text-white tracking-wider"
+                  data-aos="zoom-y-out"
+                >
+                  10 Shorts
+                </h1>
+              </div>
               <div className="max-w-3xl mx-auto">
                 <p
                   className="text-lg text-[#858BA0] mb-8"
