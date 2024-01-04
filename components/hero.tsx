@@ -42,12 +42,12 @@ export default function Hero() {
         </svg>
       </div> */}
 
-      <div className="max-w-[100%] mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Hero content */}
-        <div className="flex flex-col justify-between">
-          <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-24">
+        <div className="flex flex-col justify-between items-center md:pt-12">
+          <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-16">
             {/* Section header */}
-            <div className="text-center md:text-start pb-12 md:pb-16 md:min-w-[550px] w-full">
+            <div className="text-center md:text-start w-full">
               <h1
                 className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-wider"
                 data-aos="zoom-y-out"
@@ -65,10 +65,11 @@ export default function Hero() {
                 >
                   Reach more people by doing less work.
                   <span className="hidden md:block">
-                    <br /> Let Voodoo's AI automation process create, schedule
-                    and upload viral clips for you
+                    Let Voodoo's AI automation process create, schedule and
+                    upload viral clips for you
                   </span>
                 </p>
+                {/* Social Platforms */}
                 <div className="flex flex-row items-center justify-center md:justify-start pb-4 gap-6">
                   <img
                     src="/images/youtube.png"
@@ -137,7 +138,7 @@ export default function Hero() {
                     </a>
                   </div> */}
 
-                  <form>
+                  <form className="w-full max-w-[500px]">
                     <div className="hidden md:flex flex-wrap">
                       <div className="w-full">
                         <label
@@ -146,7 +147,7 @@ export default function Hero() {
                         >
                           Get Free Clips
                         </label>
-                        <div className="relative flex items-center md:w-96">
+                        <div className="relative flex items-center md:w-[100%]">
                           <input
                             id="newsletter"
                             type="url"
@@ -228,63 +229,31 @@ export default function Hero() {
             <div className="desktop-wide h-full w-full">
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 w-[600px] h-[328px] rounded-xl overflow-hidden"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  transform: "translate(20%, 30%)",
-                }}
+                className="bg-zinc-900 w-[650px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
                 <video src="/videos/opus.mp4" autoPlay muted loop></video>
               </div>
-              {/* Vertical */}
-              <div
-                className="bg-zinc-900 border-2 border-zinc-800 w-[200px] h-[355px] rounded-[20px] overflow-hidden"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  transform: "translate(5%, -40%)",
-                }}
-                data-aos="zoom-y-out"
-                data-aos-delay="450"
-              ></div>
             </div>
 
             {/* Desktop */}
             <div className="desktop h-full w-full">
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 w-[450px] h-[250px] rounded-xl overflow-hidden"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  transform: "translate(25%, 35%)",
-                }}
+                className="bg-zinc-900 w-[550px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
                 <video src="/videos/opus.mp4" autoPlay muted loop></video>
               </div>
-              {/* Vertical */}
-              <div
-                className="bg-zinc-900 border-2 border-zinc-800 w-[150px] h-[267px] rounded-[20px] overflow-hidden"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  transform: "translate(0%, -40%)",
-                }}
-                data-aos="zoom-y-out"
-                data-aos-delay="450"
-              ></div>
             </div>
 
             {/* Mobile */}
-            <div className="h-full w-full md:hidden flex justify-center">
+            <div className="h-full w-full md:hidden flex justify-center mt-12">
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 h-[155px] rounded-xl overflow-hidden"
+                className="bg-zinc-900 w-[90%] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
