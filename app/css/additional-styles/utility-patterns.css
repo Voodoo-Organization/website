@@ -46,15 +46,16 @@
 .form-select,
 .form-checkbox,
 .form-radio {
-  @apply bg-white border border-gray-300 focus:border-gray-500;
+  @apply bg-white border border-zinc-800 border-[#006AFF];
 }
+/* focus:border-[#006AFF] */
 
 .form-input,
 .form-textarea,
 .form-multiselect,
 .form-select,
 .form-checkbox {
-  @apply rounded;
+  @apply rounded-full;
 }
 
 .form-input,

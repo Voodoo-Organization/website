@@ -16,18 +16,6 @@
   }
 }
 
-/* disable scrollbar */
-html {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-  width: 0 !important;
-  display: none;
-}
-
 /* montserrat */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
@@ -39,6 +27,19 @@ html::-webkit-scrollbar {
 
 * {
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* disable scrollbar */
+html {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
 }
 
 .desktop-wide,
@@ -61,5 +62,57 @@ html::-webkit-scrollbar {
 @media (min-width: 2000px) {
   .desktop-wide {
     display: block;
+  }
+}
+
+/* Slider */
+
+.videos {
+  overflow: hidden;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* .slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  z-index: 900;
+  width: 5%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: calc(100vw - 50%);
+  top: 0;
+  transform: scaleX(-1);
+} */
+
+.videos-slide {
+  display: inline-block;
+  animation: slide 15s infinite linear;
+}
+
+.videos-slide-video {
+  margin: 0 20px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% * 8));
   }
 }

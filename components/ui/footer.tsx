@@ -5,23 +5,26 @@ export default function Footer() {
     <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Top area: Blocks */}
-        <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 border-t border-gray-200">
+        <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 border-t border-zinc-900">
           {/* 1st block */}
           <div className="sm:col-span-12 lg:col-span-3">
             <div className="mb-2">
-              <Logo />
+              {/* <Logo /> */}
+              <a className="font-extrabold text-[#006AFF] text-xl" href="/">
+                VOODOO
+              </a>
             </div>
             <div className="text-sm text-[#858BA0]">
               <a
                 href="#0"
-                className="text-[#858BA0] hover:text-gray-900 hover:underline transition duration-150 ease-in-out"
+                className="text-[#858BA0] hover:text-[#006AFF] hover:underline"
               >
                 Terms
               </a>{" "}
               ·{" "}
               <a
                 href="#0"
-                className="text-[#858BA0] hover:text-gray-900 hover:underline transition duration-150 ease-in-out"
+                className="text-[#858BA0] hover:text-[#006AFF] hover:underline"
               >
                 Privacy Policy
               </a>
@@ -30,45 +33,30 @@ export default function Footer() {
 
           {/* 2nd block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Products</h6>
+            <h6 className="text-[#006AFF] font-medium mb-2">Products</h6>
             <ul className="text-sm">
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Web Studio
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   DynamicBox Flex
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Programming Forms
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Integrations
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Command-line
                 </a>
               </li>
@@ -77,45 +65,30 @@ export default function Footer() {
 
           {/* 3rd block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Resources</h6>
+            <h6 className="text-[#006AFF] font-medium mb-2">Resources</h6>
             <ul className="text-sm">
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Documentation
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Tutorials & Guides
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Blog
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Support Center
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Partners
                 </a>
               </li>
@@ -124,45 +97,30 @@ export default function Footer() {
 
           {/* 4th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Company</h6>
+            <h6 className="text-[#006AFF] font-medium mb-2">Company</h6>
             <ul className="text-sm">
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Home
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   About us
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Company values
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Pricing
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-[#858BA0] hover:text-gray-900 transition duration-150 ease-in-out"
-                >
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   Privacy Policy
                 </a>
               </li>
@@ -171,7 +129,7 @@ export default function Footer() {
 
           {/* 5th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-3">
-            <h6 className="text-gray-800 font-medium mb-2">Subscribe</h6>
+            <h6 className="text-[#006AFF] font-medium mb-2">Subscribe</h6>
             <p className="text-sm text-[#858BA0] mb-4">
               Get the latest news and articles to your inbox every month.
             </p>
@@ -185,7 +143,7 @@ export default function Footer() {
                     <input
                       id="newsletter"
                       type="email"
-                      className="form-input w-full text-gray-800 px-3 py-2 pr-12 text-sm"
+                      className="form-input w-full text-white px-3 py-2 pr-12 text-sm bg-transparent"
                       placeholder="Your email"
                       required
                     />
@@ -195,7 +153,7 @@ export default function Footer() {
                       aria-label="Subscribe"
                     >
                       <span
-                        className="absolute inset-0 right-auto w-px -ml-px my-2 bg-gray-300"
+                        className="absolute inset-0 right-auto w-px -ml-px my-2 bg-zinc-800"
                         aria-hidden="true"
                       ></span>
                       <svg
@@ -219,13 +177,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom area */}
-        <div className="md:flex md:items-center md:justify-between py-4 md:py-8 border-t border-gray-200">
+        <div className="md:flex md:items-center md:justify-between py-4 md:py-8 border-t  border-zinc-900">
           {/* Social as */}
           <ul className="flex mb-4 md:order-1 md:ml-4 md:mb-0">
             <li>
               <a
                 href="#0"
-                className="flex justify-center items-center text-[#858BA0] hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
+                className="flex justify-center items-center text-[#858BA0] hover:text-[#006AFF] bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
                 aria-label="Twitter"
               >
                 <svg
@@ -240,7 +198,7 @@ export default function Footer() {
             <li className="ml-4">
               <a
                 href="#0"
-                className="flex justify-center items-center text-[#858BA0] hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
+                className="flex justify-center items-center text-[#858BA0] hover:text-[#006AFF] bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
                 aria-label="Github"
               >
                 <svg
@@ -255,7 +213,7 @@ export default function Footer() {
             <li className="ml-4">
               <a
                 href="#0"
-                className="flex justify-center items-center text-[#858BA0] hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
+                className="flex justify-center items-center text-[#858BA0] hover:text-[#006AFF] bg-zinc-900 hover:bg-blue-500 rounded-full shadow"
                 aria-label="Facebook"
               >
                 <svg
@@ -271,7 +229,7 @@ export default function Footer() {
 
           {/* Copyrights note */}
           <div className="text-sm text-[#858BA0] mr-4">
-            &copy; Cruip.com. All rights reserved.
+            &copy; Voodoo.tube All rights reserved.
           </div>
         </div>
       </div>

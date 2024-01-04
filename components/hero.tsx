@@ -118,22 +118,105 @@ export default function Hero() {
                   data-aos="zoom-y-out"
                   data-aos-delay="300"
                 >
-                  <div>
+                  {/* <div>
                     <a
                       className="btn text-white bg-[#006AFF] hover:bg-blue-800 w-full mb-4 sm:w-auto sm:mb-0"
                       href="#0"
                     >
                       Start free trial
                     </a>
-                  </div>
-                  <div>
+                  </div> */}
+
+                  <form>
+                    <div className="flex flex-wrap">
+                      <div className="w-full">
+                        <label
+                          className="block text-sm sr-only"
+                          htmlFor="newsletter"
+                        >
+                          Get Free Clips
+                        </label>
+                        <div className="relative flex items-center md:w-96">
+                          <input
+                            id="newsletter"
+                            type="url"
+                            className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-transparent"
+                            placeholder="Video URL"
+                            required
+                          />
+                          <button
+                            type="submit"
+                            className="absolute inset-0 left-auto"
+                            aria-label="Subscribe"
+                          >
+                            <span
+                              className="absolute inset-0 right-auto w-px -ml-px my-2 bg-zinc-800"
+                              aria-hidden="true"
+                            ></span>
+                            <div className="flex flex-row gap-2 items-center bg-[#006AFF] rounded-r-full py-3">
+                              <p className="text-white px-4">Get Free Clips</p>
+                            </div>
+                          </button>
+                        </div>
+                        {/* Success message */}
+                        {/* <p className="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> */}
+                      </div>
+                    </div>
+                  </form>
+
+                  {/* <form>
+                    <div className="flex flex-wrap">
+                      <div className="w-full">
+                        <label
+                          className="block text-sm sr-only"
+                          htmlFor="newsletter"
+                        >
+                          Get Free Clips
+                        </label>
+                        <div className="relative flex items-center w-96">
+                          <input
+                            id="newsletter"
+                            type="url"
+                            className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-transparent"
+                            placeholder="Video URL"
+                            required
+                          />
+                          <button
+                            type="submit"
+                            className="absolute inset-0 left-auto pl-2"
+                            aria-label="Subscribe"
+                          >
+                            <span
+                              className="absolute inset-0 right-auto w-px -ml-px my-2 bg-zinc-800"
+                              aria-hidden="true"
+                            ></span>
+                            <div className="flex flex-row gap-2 items-center">
+                              <p className="text-[#006AFF]">Get Free Clips</p>
+                              <svg
+                                className="w-3 h-3 fill-current text-[#006AFF] mx-3 shrink-0"
+                                viewBox="0 0 12 12"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                                  fillRule="nonzero"
+                                />
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form> */}
+
+                  {/* <div>
                     <a
                       className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
                       href="#0"
                     >
                       Learn more
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
