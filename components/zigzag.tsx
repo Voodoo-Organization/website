@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import FeatImage01 from "../public/images/band.png";
-import FeatImage02 from "../public/images/gold-play-btn.jpg";
+import FeatImage02 from "../public/images/goldPlayBtn.jpg";
 import FeatImage03 from "../public/images/band.png";
 
 export default function Zigzag() {
