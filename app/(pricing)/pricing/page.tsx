@@ -1,7 +1,10 @@
-export const metadata = {
-  title: "Pricing",
-  description: "Page description",
-};
+"use client";
+import { useState } from "react";
+
+// export const metadata = {
+//   title: "Pricing",
+//   description: "Page description",
+// };
 
 import Link from "next/link";
 
@@ -81,6 +84,12 @@ export default function Pricing() {
     },
   ];
 
+  const [isYearly, setIsYearly] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsYearly((prevIsYearly) => !prevIsYearly);
+  };
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -88,6 +97,51 @@ export default function Pricing() {
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h1">Pricing</h2>
+            <div>
+              {/* Monthly / Yearly Switch */}
+              <div className="flex justify-center items-center mt-6">
+                <div
+                  onClick={() => setIsYearly(false)}
+                  className={`monthly-text text-lg mx-3 ${
+                    !isYearly ? "font-bold text-[#006AFF]" : "text-[#858BA0]"
+                  }`}
+                >
+                  Monthly
+                  {/* <div className="relative bottom-16 left-32 h-20" /> */}
+                </div>
+                <div
+                  className="toggle relative inline-block w-auto align-middle select-none"
+                  onClick={toggleSwitch}
+                >
+                  <input type="checkbox" checked={isYearly} readOnly />
+                  <label></label>
+                  {/* <div className="relative bottom-16 left-32 h-20" /> */}
+                </div>
+                <div
+                  onClick={() => setIsYearly(true)}
+                  className={`yearly-text text-lg mx-3 ${
+                    isYearly ? "font-bold text-[#006AFF]" : "text-[#858BA0]"
+                  }`}
+                >
+                  Yearly
+                </div>
+                <div className="hidden xl:block absolute top-[26%] left-[59%] w-full">
+                  <img src="/images/2-months-free.png" />
+                </div>
+                <div className="hidden lg:block xl:hidden absolute top-[26%] left-[62%] w-full">
+                  <img src="/images/2-months-free.png" />
+                </div>
+                <div className="hidden md:block lg:hidden absolute top-[26%] left-[64%] w-full">
+                  <img src="/images/2-months-free.png" />
+                </div>
+                <div className="hidden sm:block md:hidden absolute top-[20%] left-[66%] w-full">
+                  <img src="/images/2-months-free.png" />
+                </div>
+              </div>
+              <div className="sm:hidden flex justify-center">
+                <img src="/images/2-months-free-mobile.png" />
+              </div>
+            </div>
           </div>
 
           <table className="table flex flex-row flex-no-wrap">
@@ -101,6 +155,7 @@ export default function Pricing() {
                     plan
                   </p>
                 </th>
+                {/* add hidden class if want to hide on mobile */}
                 <th className="hidden sm:table-cell">
                   <h1 className="text-2xl">
                     Free{" "}
@@ -108,14 +163,14 @@ export default function Pricing() {
                   </h1>
                   <Link
                     href="/signup"
-                    className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
+                    className="btn-sm px-6 py-3 text-white bg-zinc-900 hover:bg-zinc-800"
                   >
-                    <span>Select</span>
+                    <span>Create an account</span>
                   </Link>
                 </th>
                 <th className="hidden sm:table-cell">
                   <h1 className="text-2xl">
-                    $49{" "}
+                    {isYearly ? "$490 " : "$49 "}
                     <span className="text-sm text-[#858BA0]">/ Monthly</span>
                   </h1>
                   <Link
@@ -126,6 +181,62 @@ export default function Pricing() {
                   </Link>
                 </th>
                 <th className="hidden sm:table-cell">
+                  <h1 className="text-2xl">
+                    {isYearly ? "$790 " : "$79 "}
+                    <span className="text-sm text-[#858BA0]">/ Monthly</span>
+                  </h1>
+                  <Link
+                    href="/signup"
+                    className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
+                  >
+                    <span>Start Free Trial</span>
+                  </Link>
+                </th>
+
+                {/* Mobile version */}
+                <th className=" sm:hidden">
+                  <div className="flex justify-between">
+                    <h1
+                      style={{
+                        fontSize: "2rem",
+                      }}
+                    >
+                      Free
+                      <span className="text-sm text-[#858BA0]">
+                        <br /> / Lifetime
+                      </span>
+                    </h1>
+                    <h1
+                      style={{
+                        fontSize: "2rem",
+                      }}
+                    >
+                      {isYearly ? "$490 " : "$49 "}
+                      <span className="text-sm text-[#858BA0]">
+                        <br /> / Month
+                      </span>
+                    </h1>
+                    <h1
+                      style={{
+                        fontSize: "2rem",
+                      }}
+                    >
+                      {isYearly ? "$790 " : "$79 "}
+                      <span className="text-sm text-[#858BA0]">
+                        <br /> / Month
+                      </span>
+                    </h1>
+                  </div>
+
+                  <Link
+                    href="/signup"
+                    className="btn-sm px-6 py-2 text-white bg-[#006AFF] hover:bg-blue-800"
+                  >
+                    <span>Continue</span>
+                  </Link>
+                </th>
+                {/* <th className=" sm:hidden"></th>
+                <th className=" sm:hidden">
                   <h1 className="text-2xl">
                     $79{" "}
                     <span className="text-sm text-[#858BA0]">/ Monthly</span>
@@ -136,7 +247,7 @@ export default function Pricing() {
                   >
                     <span>Start Free Trial</span>
                   </Link>
-                </th>
+                </th> */}
               </tr>
             </thead>
             <tbody className="flex-1 sm:flex-none">
@@ -182,7 +293,7 @@ export default function Pricing() {
                           </div>
                         ) : (
                           <div className="flex justify-between sm:justify-center items-center">
-                            <span className="sm:hidden pr-2">Free</span>
+                            <span className="sm:hidden pr-2">Basic</span>
                             {row.basic}
                           </div>
                         )}
@@ -202,7 +313,7 @@ export default function Pricing() {
                           </div>
                         ) : (
                           <div className="flex justify-between sm:justify-center items-center">
-                            <span className="sm:hidden pr-2">Free</span>
+                            <span className="sm:hidden pr-2">Pro</span>
                             {row.pro}
                           </div>
                         )}
@@ -277,25 +388,6 @@ function CheckIcon() {
     </svg>
   );
 }
-
-// function CheckIcon() {
-//   return (
-//     <svg
-//       xmlns="http://www.w3.org/2000/svg"
-//       width="18"
-//       height="18"
-//       viewBox="0 0 24 24"
-//       fill="none"
-//       stroke="#006AFF"
-//       strokeWidth="2"
-//       strokeLinecap="round"
-//       strokeLinejoin="round"
-//       className="lucide lucide-check"
-//     >
-//       <path d="M20 6 9 17l-5-5" />
-//     </svg>
-//   );
-// }
 
 function XIcon() {
   return (

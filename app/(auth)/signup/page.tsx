@@ -104,7 +104,7 @@ export default function SignUp() {
             <form>
               <div className="flex flex-wrap -mx-3 mb-3">
                 <div className="w-full px-3">
-                  <button className="btn px-0 text-white bg-gray-900 hover:bg-gray-800 w-full relative flex items-center">
+                  <button className="btn px-0 text-white bg-zinc-900 hover:bg-zinc-800 w-full relative flex items-center">
                     <svg
                       className="w-4 h-4 fill-current text-white opacity-75 shrink-0 mx-4"
                       viewBox="0 0 16 16"
