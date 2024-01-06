@@ -16,14 +16,14 @@ export default function Footer() {
             </div>
             <div className="text-sm text-[#858BA0]">
               <a
-                href="#0"
+                href="/terms-of-service"
                 className="text-[#858BA0] hover:text-[#006AFF] hover:underline"
               >
                 Terms
               </a>{" "}
               ·{" "}
               <a
-                href="#0"
+                href="/privacy-policy"
                 className="text-[#858BA0] hover:text-[#006AFF] hover:underline"
               >
                 Privacy Policy
@@ -120,7 +120,10 @@ export default function Footer() {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
+                <a
+                  href="/privacy-policy"
+                  className="text-[#858BA0] hover:text-[#006AFF]"
+                >
                   Privacy Policy
                 </a>
               </li>

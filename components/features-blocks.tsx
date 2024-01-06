@@ -14,11 +14,16 @@ export default function FeaturesBlocks() {
           <div className="max-w-4xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 mb-4">AI Automation Magic</h2>
             <p className="text-lg text-[#858BA0]">
+              When you upload a video to YouTube <br /> Voodoo analyzes it, take
+              the best parts of it and than create, schedule and upload
+              <br /> tens of viral short clips for you, all automatically
+            </p>
+            {/* <p className="text-lg text-[#858BA0]">
               You upload videos to your channel as usual <br /> We process them,
               find the best parts that can become viral and than create,
               schedule and upload tens of short vertical clips from it and all
               happens automatically
-            </p>
+            </p> */}
             <div
               className="max-w-xs mx-auto sm:max-w-none sm:flex justify-center pt-12"
               data-aos="zoom-y-out"
@@ -105,7 +110,7 @@ export default function FeaturesBlocks() {
             {/* 1st item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <AiOutlineYoutube className="text-2xl text-[#006AFF] mb-1" />
+                <AiOutlineYoutube className="text-2xl text-[#006AFF] mb-2" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Video Detection
                 </h4>
@@ -119,7 +124,7 @@ export default function FeaturesBlocks() {
             {/* 2nd item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <LuBrainCircuit className="text-2xl text-[#006AFF] mb-1" />
+                <LuBrainCircuit className="text-2xl text-[#006AFF] mb-2" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   AI Processing
                 </h4>
@@ -133,7 +138,7 @@ export default function FeaturesBlocks() {
             {/* 3rd item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <IoCrop className="text-2xl text-[#006AFF] mb-1" />
+                <IoCrop className="text-2xl text-[#006AFF] mb-2" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Auto Crop
                 </h4>
@@ -147,7 +152,7 @@ export default function FeaturesBlocks() {
             {/* 4th item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <BiCaptions className="text-2xl text-[#006AFF] mb-1" />
+                <BiCaptions className="text-2xl text-[#006AFF] mb-2" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Attractive Captions
                 </h4>
@@ -160,7 +165,7 @@ export default function FeaturesBlocks() {
             {/* 5th item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <HiOutlineUpload className="text-2xl text-[#006AFF] mb-1" />
+                <HiOutlineUpload className="text-2xl text-[#006AFF] mb-2" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Schedule & Upload
                 </h4>
@@ -174,7 +179,7 @@ export default function FeaturesBlocks() {
             {/* 6th item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <HiOutlineEmojiHappy className="text-2xl text-[#006AFF] mb-1" />
+                <HiOutlineEmojiHappy className="text-2xl text-[#006AFF] mb-2" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   You
                 </h4>

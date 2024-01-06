@@ -12,75 +12,76 @@ export default function Pricing() {
   const data = [
     {
       featureName: "Processing Time",
-      free: "300 minutes",
-      basic: "3600 minutes",
-      pro: "7200 minutes",
+      free: "60 minutes",
+      basic: "150 minutes",
+      pro: "3600 minutes",
     },
     {
-      featureName: "Feature 1",
+      featureName: "Auto AI 9:16 Cropping",
       free: "tick",
       basic: "tick",
       pro: "tick",
     },
     {
-      featureName: "Feature 1",
+      featureName: "Auto Captioning",
       free: "tick",
       basic: "tick",
       pro: "tick",
     },
     {
-      featureName: "Feature 1",
+      featureName: "Your Brand Colors",
       free: "tick",
       basic: "tick",
       pro: "tick",
     },
     {
-      featureName: "Feature 1",
+      featureName: "Schedule From Existing Videos",
+      free: "tick",
+      basic: "tick",
+      pro: "tick",
+    },
+    {
+      featureName: "Auto Schedule",
       free: "",
       basic: "tick",
       pro: "tick",
     },
     {
-      featureName: "Feature 1",
+      featureName: "Auto Upload",
       free: "",
       basic: "tick",
       pro: "tick",
     },
     {
-      featureName: "Feature 1",
+      featureName: "Manual/Auto Publish Mode",
+      free: "tick",
+      basic: "tick",
+      pro: "tick",
+    },
+    {
+      featureName: "Remove Watermark",
       free: "",
       basic: "tick",
       pro: "tick",
     },
     {
-      featureName: "Feature 1",
-      free: "",
-      basic: "tick",
-      pro: "tick",
+      featureName: "Publishing Platforms",
+      free: ["youtube-shorts"],
+      basic: ["youtube-shorts", "tiktok", "instagram-reels", "facebook"],
+      pro: ["youtube-shorts", "tiktok", "instagram-reels", "facebook"],
     },
     {
-      featureName: "Feature 1",
-      free: "",
-      basic: "tick",
-      pro: "tick",
+      featureName: "AI Stickers",
+      free: "Coming soon",
+      basic: "Coming soon",
+      pro: "Coming soon",
     },
     {
-      featureName: "Feature 1",
-      free: "",
-      basic: "tick",
-      pro: "tick",
-    },
-    {
-      featureName: "Feature 1",
-      free: "",
-      basic: "tick",
-      pro: "tick",
-    },
-    {
-      featureName: "Feature 1",
-      free: "",
-      basic: "tick",
-      pro: "tick",
+      featureName:
+        "Translate Your Videos to 20+ Languages (while keeping your own voice and tone)",
+      free: "Coming soon",
+      basic: "Coming soon",
+      pro: "Coming soon",
     },
   ];
 
@@ -125,7 +126,7 @@ export default function Pricing() {
                 >
                   Yearly
                 </div>
-                <div className="hidden xl:block absolute top-[26%] left-[59%] w-full">
+                <div className="hidden xl:block 3xl:hidden absolute top-[26%] left-[59%] w-full">
                   <img src="/images/2-months-free.png" />
                 </div>
                 <div className="hidden lg:block xl:hidden absolute top-[26%] left-[62%] w-full">
@@ -139,6 +140,9 @@ export default function Pricing() {
                 </div>
               </div>
               <div className="sm:hidden flex justify-center">
+                <img src="/images/2-months-free-mobile.png" />
+              </div>
+              <div className="hidden 3xl:flex xl:hidden justify-center">
                 <img src="/images/2-months-free-mobile.png" />
               </div>
             </div>
@@ -157,39 +161,78 @@ export default function Pricing() {
                 </th>
                 {/* add hidden class if want to hide on mobile */}
                 <th className="hidden sm:table-cell">
-                  <h1 className="text-2xl">
-                    Free{" "}
-                    <span className="text-sm text-[#858BA0]"> / Lifetime</span>
+                  <h1 className="!text-3xl">Free</h1>
+                  <h1>
+                    <div className="flex justify-center items-center">
+                      <h1>$0</h1>
+                      <div className="text-sm text-[#858BA0]">/ Month</div>
+                    </div>
+                    <div className="text-sm text-[#858BA0] py-2">
+                      Free forever
+                    </div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-zinc-900 hover:bg-zinc-800"
                   >
-                    <span>Create an account</span>
+                    <div>Create an account</div>
                   </Link>
                 </th>
                 <th className="hidden sm:table-cell">
-                  <h1 className="text-2xl">
-                    {isYearly ? "$490 " : "$49 "}
-                    <span className="text-sm text-[#858BA0]">/ Monthly</span>
+                  <h1 className="!text-3xl">Starter</h1>
+                  <h1>
+                    {isYearly ? (
+                      <div className="flex justify-center items-center">
+                        <h1 className="line-through !mx-2 !text-3xl !text-[#006AFF]">
+                          $49
+                        </h1>{" "}
+                        <h1 className="!text-4xl">$39 </h1>{" "}
+                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                      </div>
+                    ) : (
+                      <div className="flex justify-center items-center">
+                        <h1>$49</h1>
+                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                      </div>
+                    )}
+                    <div className="text-sm text-[#858BA0] py-2">
+                      For individual creators
+                    </div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Start Free Trial</span>
+                    <div>Start Free Trial</div>
                   </Link>
                 </th>
                 <th className="hidden sm:table-cell">
-                  <h1 className="text-2xl">
-                    {isYearly ? "$790 " : "$79 "}
-                    <span className="text-sm text-[#858BA0]">/ Monthly</span>
+                  <h1>
+                    <h1 className="!text-3xl">Pro</h1>
+                    {isYearly ? (
+                      <div className="flex justify-center items-center">
+                        <h1 className="line-through !mx-2 !text-3xl !text-[#006AFF]">
+                          $79
+                        </h1>{" "}
+                        <h1 className="!text-4xl">$59 </h1>{" "}
+                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                      </div>
+                    ) : (
+                      <div className="flex justify-center items-center">
+                        <h1>$79</h1>
+                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                      </div>
+                    )}
+                    {/* <div className="text-sm text-[#858BA0]">/ Month</div> */}
+                    <div className="text-sm text-[#858BA0] py-2">
+                      For professional creators
+                    </div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Start Free Trial</span>
+                    <div>Start Free Trial</div>
                   </Link>
                 </th>
 
@@ -202,29 +245,25 @@ export default function Pricing() {
                       }}
                     >
                       Free
-                      <span className="text-sm text-[#858BA0]">
-                        <br /> / Lifetime
-                      </span>
+                      <div className="text-sm text-[#858BA0] py-2">
+                        / Lifetime
+                      </div>
                     </h1>
                     <h1
                       style={{
                         fontSize: "2rem",
                       }}
                     >
-                      {isYearly ? "$490 " : "$49 "}
-                      <span className="text-sm text-[#858BA0]">
-                        <br /> / Month
-                      </span>
+                      {isYearly ? "$39 " : "$49 "}
+                      <div className="text-sm text-[#858BA0] py-2">/ Month</div>
                     </h1>
                     <h1
                       style={{
                         fontSize: "2rem",
                       }}
                     >
-                      {isYearly ? "$790 " : "$79 "}
-                      <span className="text-sm text-[#858BA0]">
-                        <br /> / Month
-                      </span>
+                      {isYearly ? "$59 " : "$79 "}
+                      <div className="text-sm text-[#858BA0] py-2">/ Month</div>
                     </h1>
                   </div>
 
@@ -232,20 +271,20 @@ export default function Pricing() {
                     href="/signup"
                     className="btn-sm px-6 py-2 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Continue</span>
+                    <div>Continue</div>
                   </Link>
                 </th>
                 {/* <th className=" sm:hidden"></th>
                 <th className=" sm:hidden">
-                  <h1 className="text-2xl">
+                  <h1>
                     $79{" "}
-                    <span className="text-sm text-[#858BA0]">/ Monthly</span>
+                    <div className="text-sm text-[#858BA0]">/ Monthly</div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Start Free Trial</span>
+                    <div>Start Free Trial</div>
                   </Link>
                 </th> */}
               </tr>
@@ -262,18 +301,23 @@ export default function Pricing() {
                         {row.free === "tick" ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             {" "}
-                            <span className="sm:hidden pr-2">Free</span>{" "}
+                            <div className="sm:hidden pr-2">Free</div>{" "}
                             <CheckIcon />{" "}
                           </div>
                         ) : row.free === "" ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             {" "}
-                            <span className="sm:hidden pr-2">Free</span>
+                            <div className="sm:hidden pr-2">Free</div>
                             <XIcon />{" "}
+                          </div>
+                        ) : Array.isArray(row.free) ? (
+                          <div className="flex justify-between sm:justify-center items-center">
+                            <div className="sm:hidden pr-2">Free</div>
+                            {Social(row.free)}
                           </div>
                         ) : (
                           <div className="flex justify-between sm:justify-center items-center">
-                            <span className="sm:hidden pr-2">Free</span>
+                            <div className="sm:hidden pr-2">Free</div>
                             {row.free}
                           </div>
                         )}
@@ -282,18 +326,23 @@ export default function Pricing() {
                         {row.basic === "tick" ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             {" "}
-                            <span className="sm:hidden pr-2">Basic</span>
+                            <div className="sm:hidden pr-2">Basic</div>
                             <CheckIcon />{" "}
                           </div>
                         ) : row.basic === "" ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             {" "}
-                            <span className="sm:hidden pr-2">Basic</span>
+                            <div className="sm:hidden pr-2">Basic</div>
                             <XIcon />{" "}
+                          </div>
+                        ) : Array.isArray(row.basic) ? (
+                          <div className="flex justify-between sm:justify-center items-center">
+                            <div className="sm:hidden pr-2">Basic</div>
+                            {Social(row.basic)}
                           </div>
                         ) : (
                           <div className="flex justify-between sm:justify-center items-center">
-                            <span className="sm:hidden pr-2">Basic</span>
+                            <div className="sm:hidden pr-2">Basic</div>
                             {row.basic}
                           </div>
                         )}
@@ -302,18 +351,23 @@ export default function Pricing() {
                         {row.pro === "tick" ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             {" "}
-                            <span className="sm:hidden pr-2">Pro</span>
+                            <div className="sm:hidden pr-2">Pro</div>
                             <CheckIcon />{" "}
                           </div>
                         ) : row.pro === "" ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             {" "}
-                            <span className="sm:hidden pr-2">Pro</span>
+                            <div className="sm:hidden pr-2">Pro</div>
                             <XIcon />{" "}
+                          </div>
+                        ) : Array.isArray(row.pro) ? (
+                          <div className="flex justify-between sm:justify-center items-center">
+                            <div className="sm:hidden pr-2">Pro</div>
+                            {Social(row.pro)}
                           </div>
                         ) : (
                           <div className="flex justify-between sm:justify-center items-center">
-                            <span className="sm:hidden pr-2">Pro</span>
+                            <div className="sm:hidden pr-2">Pro</div>
                             {row.pro}
                           </div>
                         )}
@@ -326,38 +380,35 @@ export default function Pricing() {
               <tr>
                 <th>
                   <h1 className="text-4xl text-center">
-                    Free{" "}
-                    <span className="text-sm text-[#858BA0]"> / Lifetime</span>
+                    Free <div className="text-sm text-[#858BA0]"> / Month</div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Select</span>
+                    <div>Select</div>
                   </Link>
                 </th>
                 <th>
-                  <h1 className="text-2xl">
-                    $49{" "}
-                    <span className="text-sm text-[#858BA0]">/ Monthly</span>
+                  <h1>
+                    $49 <div className="text-sm text-[#858BA0]">/ Month</div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Start Free Trial</span>
+                    <div>Start Free Trial</div>
                   </Link>
                 </th>
                 <th>
-                  <h1 className="text-2xl">
-                    $79{" "}
-                    <span className="text-sm text-[#858BA0]">/ Monthly</span>
+                  <h1>
+                    $79 <div className="text-sm text-[#858BA0]">/ Month</div>
                   </h1>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
-                    <span>Start Free Trial</span>
+                    <div>Start Free Trial</div>
                   </Link>
                 </th>
               </tr>
@@ -406,5 +457,19 @@ function XIcon() {
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
     </svg>
+  );
+}
+
+function Social(platforms: string[]) {
+  return (
+    <div className="flex justify-center items-center gap-2">
+      {platforms.map((platform, index) => {
+        return (
+          <div key={index} className="flex justify-center items-center">
+            <img width={24} src={`/images/${platform}.png`} />
+          </div>
+        );
+      })}
+    </div>
   );
 }

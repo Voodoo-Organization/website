@@ -45,20 +45,28 @@ export default function Header() {
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
                 <Link
+                  href="/"
+                  className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
                 >
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/pricing"
@@ -69,7 +77,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/signin"
+                  href="https://voodoo-fe.vercel.app/sign-in"
                   className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
                 >
                   Login
@@ -77,10 +85,10 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/signup"
+                  href="https://voodoo-fe.vercel.app/sign-up"
                   className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ml-3"
                 >
-                  <span>Start Free Trial</span>
+                  <span className="!text-white">Start Free Trial</span>
                   {/* <svg
                     className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1"
                     viewBox="0 0 12 12"

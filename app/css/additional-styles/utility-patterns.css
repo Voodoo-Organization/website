@@ -1,18 +1,18 @@
 /* Typography */
 .h1 {
-  @apply text-4xl font-extrabold leading-tight tracking-tighter text-white;
+  @apply text-4xl font-extrabold leading-tight tracking-tighter !text-white;
 }
 
 .h2 {
-  @apply text-3xl font-extrabold leading-tight tracking-tighter text-white;
+  @apply text-3xl font-extrabold leading-tight tracking-tighter !text-white;
 }
 
 .h3 {
-  @apply text-3xl font-bold leading-tight text-white;
+  @apply text-3xl font-bold leading-tight !text-white;
 }
 
 .h4 {
-  @apply text-2xl font-bold leading-snug tracking-tight text-white;
+  @apply text-2xl font-bold leading-snug tracking-tight !text-white;
 }
 
 @screen md {
@@ -28,7 +28,7 @@
 /* Buttons */
 .btn,
 .btn-sm {
-  @apply font-semibold inline-flex items-center justify-center border border-transparent rounded-full leading-snug;
+  @apply font-semibold inline-flex items-center justify-center border border-transparent rounded-full leading-snug !text-white;
 }
 
 .btn {
@@ -50,9 +50,29 @@
 .form-select,
 .form-checkbox,
 .form-radio {
-  @apply bg-white border border-zinc-800 border-[#006AFF];
+  @apply border-none;
 }
-/* focus:border-[#006AFF] */
+
+.input-wrapper {
+  @apply !bg-[#0e1015] border border-[#006AFF] rounded-full;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0e1015 inset !important;
+  -webkit-background-clip: text !important;
+  border: none !important;
+  outline: none !important;
+  caret-color: #fff !important;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+}
 
 .form-input,
 .form-textarea,
@@ -71,7 +91,7 @@
 
 .form-input,
 .form-textarea {
-  @apply placeholder-gray-500;
+  @apply !placeholder-[#858BA0] !text-[#858BA0];
 }
 
 .form-select {
@@ -110,7 +130,7 @@
 } */
 
 .table th:not(:first-child) h1 {
-  @apply pb-4 text-center text-4xl;
+  @apply py-0 text-center text-4xl;
 }
 
 .table th .btn-sm {

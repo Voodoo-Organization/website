@@ -172,14 +172,30 @@ export default function Hero() {
                         >
                           Get Free Clips
                         </label>
-                        <div className="relative flex items-center md:w-[100%]">
+                        <div className="input-wrapper relative flex items-center md:w-[100%] bg-[#0E1015]">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#006AFF"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-link ml-3"
+                          >
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                          </svg>
                           <input
                             id="newsletter"
                             type="url"
                             className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-[#0E1015]"
-                            placeholder="YouTube Video URL"
+                            placeholder="YouTube Video Link"
                             required
                           />
+
                           <button
                             type="submit"
                             className="hero-btn btn-text absolute inset-0 left-auto"
@@ -187,13 +203,13 @@ export default function Hero() {
                           >
                             {/* Blue Wave Circles */}
                             <div className="blue-wave z-[-1] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                              <span className="z-[-1] absolute w-18 h-18 opacity-70 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
-                              <span className="z-[-1] absolute w-24 h-24 opacity-60 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
-                              <span className="z-[-1] absolute w-30 h-30 opacity-50 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
-                              <span className="z-[-1] absolute w-36 h-36 opacity-40 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
-                              <span className="z-[-1] absolute w-42 h-42 opacity-30 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
-                              <span className="z-[-1] absolute w-48 h-48 opacity-20 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
-                              <span className="z-[-1] absolute w-54 h-54 opacity-10 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-24 h-24 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-32 h-32 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-40 h-40 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-48 h-48 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-56 h-56 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-64 h-64 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                              <span className="z-[-1] absolute w-72 h-72 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
                             </div>
 
                             <div className="flex flex-row gap-2 items-center bg-[#006AFF] rounded-r-full py-3">
@@ -214,7 +230,22 @@ export default function Hero() {
                         >
                           Get Free Clips
                         </label>
-                        <div className="relative flex items-center md:w-96">
+                        <div className="input-wrapper relative flex items-center md:w-96">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#006AFF"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-link ml-3"
+                          >
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                          </svg>
                           <input
                             id="newsletter"
                             type="url"
