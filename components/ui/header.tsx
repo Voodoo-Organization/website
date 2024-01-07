@@ -51,14 +51,14 @@ export default function Header() {
                   Home
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/about"
                   className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
                 >
                   About
                 </Link>
-              </li>
+              </li> */}
               {/* <li>
                 <Link
                   href="/blog"
@@ -67,6 +67,14 @@ export default function Header() {
                   Blog
                 </Link>
               </li> */}
+              <li>
+                <Link
+                  href="/affiliate"
+                  className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
+                >
+                  Affiliate
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/pricing"

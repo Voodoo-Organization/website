@@ -290,18 +290,31 @@ export default function Hero() {
 
             {/* Desktop Wide */}
             <div className="desktop-wide h-full w-full">
+              <p className="text-gray-500 text-center">
+                Here will be our promotion video (currently in progress)
+              </p>
+
               {/* Horizontal */}
               <div
                 className="bg-zinc-900 w-[650px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
-                <video src="/videos/opus.mp4" autoPlay muted loop></video>
+                <video
+                  src="/videos/video-placeholder.mp4"
+                  autoPlay
+                  muted
+                  loop
+                ></video>
               </div>
             </div>
 
             {/* Desktop */}
             <div className="desktop h-full w-full">
+              <p className="text-gray-500 text-center">
+                Here will be our promotion video (currently in progress)
+              </p>
+
               {/* <button className="btn mute text-white">mute</button> */}
               {/* Horizontal */}
               <div
@@ -316,7 +329,7 @@ export default function Hero() {
               >
                 <video
                   id="video"
-                  src="/videos/opus.mp4"
+                  src="/videos/video-placeholder.mp4"
                   autoPlay
                   muted
                   loop
@@ -326,13 +339,21 @@ export default function Hero() {
 
             {/* Mobile */}
             <div className="h-full w-full md:hidden flex justify-center mt-12">
+              <p className="text-gray-500 text-center">
+                Here will be our promotion video (currently in progress)
+              </p>
               {/* Horizontal */}
               <div
                 className="bg-zinc-900 w-[90%] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
-                <video src="/videos/opus.mp4" autoPlay muted loop></video>
+                <video
+                  src="/videos/video-placeholder.mp4"
+                  autoPlay
+                  muted
+                  loop
+                ></video>
               </div>
             </div>
 
@@ -350,11 +371,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="pt-24 flex flex-row gap-24 justify-center items-center z-[30] pb-12 px-6 md:px-0 overflow-x-auto md:overflow-hidden">
+      {/* <div className="pt-24 flex flex-row gap-24 justify-center items-center z-[30] pb-12 px-6 md:px-0 overflow-x-auto md:overflow-hidden">
         {logos.map((image, index) => (
           <img src={image} alt={`Logo ${index + 1}`} width={120} />
         ))}
-      </div>
+      </div> */}
 
       {/* <div className="md:hidden">
         <div className="slider-images">
