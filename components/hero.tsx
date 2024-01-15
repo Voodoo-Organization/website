@@ -191,7 +191,7 @@ export default function Hero() {
                           <input
                             id="newsletter"
                             type="url"
-                            className="form-input w-full text-white px-3 py-3 pr-12 text-sm bg-[#0E1015]"
+                            className="form-input hero-input w-full text-white px-3 py-3 pr-12 text-sm bg-[#0E1015]"
                             placeholder="YouTube Video Link"
                             required
                           />

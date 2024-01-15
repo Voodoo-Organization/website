@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           {/* 2nd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+          {/* <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-[#006AFF] font-medium mb-2">Products</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -61,10 +61,10 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* 3rd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+          {/* <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-[#006AFF] font-medium mb-2">Resources</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -93,29 +93,35 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* 4th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-[#006AFF] font-medium mb-2">Company</h6>
             <ul className="text-sm">
               <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
+                <a href="/" className="text-[#858BA0] hover:text-[#006AFF]">
                   Home
                 </a>
               </li>
-              <li className="mb-2">
+              {/* <li className="mb-2">
                 <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
                   About us
                 </a>
-              </li>
+              </li> */}
               <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
-                  Company values
+                <a
+                  href="/affiliate"
+                  className="text-[#858BA0] hover:text-[#006AFF]"
+                >
+                  Affiliate
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
+                <a
+                  href="/pricing"
+                  className="text-[#858BA0] hover:text-[#006AFF]"
+                >
                   Pricing
                 </a>
               </li>
@@ -134,7 +140,7 @@ export default function Footer() {
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-3">
             <h6 className="text-[#006AFF] font-medium mb-2">Subscribe</h6>
             <p className="text-sm text-[#858BA0] mb-4">
-              Get the latest news and articles to your inbox every month.
+              Be the first to know about our new features and updates.
             </p>
             <form>
               <div className="flex flex-wrap mb-4">
@@ -160,9 +166,10 @@ export default function Footer() {
                         aria-hidden="true"
                       ></span>
                       <svg
-                        className="w-3 h-3 fill-current text-[#006AFF] mx-3 shrink-0"
+                        className="w-3 h-3 mx-3 shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
+                        fill="#006AFF"
                       >
                         <path
                           d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"

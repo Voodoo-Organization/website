@@ -15,6 +15,12 @@
   @apply text-2xl font-bold leading-snug tracking-tight !text-white;
 }
 
+p,
+ul,
+li {
+  @apply text-[#858BA0];
+}
+
 @screen md {
   .h1 {
     @apply text-5xl;
@@ -50,6 +56,10 @@
 .form-select,
 .form-checkbox,
 .form-radio {
+  @apply border border-[#006AFF] rounded-full;
+}
+
+.hero-input {
   @apply border-none;
 }
 

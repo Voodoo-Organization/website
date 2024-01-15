@@ -18,11 +18,12 @@ export default function Shorts() {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h2 className="h2 mb-4 text-white">
+            <h2 className="h2 mb-4 text-white">Helping YouTubers grow</h2>
+            {/* <h2 className="h2 mb-4 text-white">
               Trusted by over 20,000 YouTubers
-            </h2>
+            </h2> */}
             <p className="text-xl text-[#858BA0]" data-aos="zoom-y-out">
-              We are the best solution for your YouTube channel growth
+              Our AI automatically creates, schedules and uploads viral short
             </p>
           </div>
           <div className="videos max-w-none w-[100vw] px-0 mx-0">

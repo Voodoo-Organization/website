@@ -62,7 +62,9 @@ export default function Zigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Duis aute irure dolor in reprehenderit</span>
+                      <span>
+                        Monetize effortlessly: Create, we handle the rest
+                      </span>
                     </li>
                     <li className="flex items-center mb-2">
                       <svg
@@ -72,7 +74,10 @@ export default function Zigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Excepteur sint occaecat</span>
+                      <span>
+                        Focus on content creation, let us manage the rest for
+                        you
+                      </span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -82,7 +87,10 @@ export default function Zigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Amet consectetur adipiscing elit</span>
+                      <span>
+                        Enjoy creating content you love; we handle editing,
+                        scheduling, and uploading for you
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -115,9 +123,8 @@ export default function Zigzag() {
                   </div> */}
                   <h3 className="h3 mb-3">Optimized for growth</h3>
                   <p className="text-xl text-[#858BA0] mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Our mission is to help you grow your channel and increase
+                    your social media presence on all platforms
                   </p>
                   <ul className="text-lg text-[#858BA0] -mb-2">
                     <li className="flex items-center mb-2">
@@ -128,7 +135,10 @@ export default function Zigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Duis aute irure dolor in reprehenderit</span>
+                      <span>
+                        Craft engaging content for consistent growth across
+                        platforms
+                      </span>
                     </li>
                     <li className="flex items-center mb-2">
                       <svg
@@ -138,7 +148,10 @@ export default function Zigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Excepteur sint occaecat</span>
+                      <span>
+                        Use data analytics to optimize content strategy for
+                        social media expansion
+                      </span>
                     </li>
                     <li className="flex items-center">
                       <svg
@@ -148,7 +161,10 @@ export default function Zigzag() {
                       >
                         <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                       </svg>
-                      <span>Amet consectetur adipiscing elit</span>
+                      <span>
+                        Stay ahead with adaptive content for sustained growth on
+                        all platforms
+                      </span>
                     </li>
                   </ul>
                 </div>

@@ -110,7 +110,7 @@ export default function FeaturesBlocks() {
             {/* 1st item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <AiOutlineYoutube className="text-2xl text-[#006AFF] mb-2" />
+                <AiOutlineYoutube className="text-2xl !text-[#006AFF] mb-2 icon" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Video Detection
                 </h4>
@@ -124,7 +124,7 @@ export default function FeaturesBlocks() {
             {/* 2nd item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <LuBrainCircuit className="text-2xl text-[#006AFF] mb-2" />
+                <LuBrainCircuit className="text-2xl !text-[#006AFF] mb-2 icon" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   AI Processing
                 </h4>
@@ -138,7 +138,7 @@ export default function FeaturesBlocks() {
             {/* 3rd item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <IoCrop className="text-2xl text-[#006AFF] mb-2" />
+                <IoCrop className="text-2xl !text-[#006AFF] mb-2 icon" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Auto Crop
                 </h4>
@@ -152,7 +152,7 @@ export default function FeaturesBlocks() {
             {/* 4th item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <BiCaptions className="text-2xl text-[#006AFF] mb-2" />
+                <BiCaptions className="text-2xl !text-[#006AFF] mb-2 icon" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Attractive Captions
                 </h4>
@@ -165,7 +165,7 @@ export default function FeaturesBlocks() {
             {/* 5th item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <HiOutlineUpload className="text-2xl text-[#006AFF] mb-2" />
+                <HiOutlineUpload className="text-2xl !text-[#006AFF] mb-2 icon" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   Schedule & Upload
                 </h4>
@@ -179,7 +179,7 @@ export default function FeaturesBlocks() {
             {/* 6th item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
               <div className="flex flex-row gap-2 items-center">
-                <HiOutlineEmojiHappy className="text-2xl text-[#006AFF] mb-2" />
+                <HiOutlineEmojiHappy className="text-2xl !text-[#006AFF] mb-2 icon" />
                 <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
                   You
                 </h4>
