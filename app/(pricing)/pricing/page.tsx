@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Tooltip from "@mui/material/Tooltip";
 
 // export const metadata = {
 //   title: "Pricing",
@@ -12,9 +13,56 @@ export default function Pricing() {
   const data = [
     {
       featureName: "Processing Time",
+      info: (
+        <div>
+          Processing time represents the duration needed to analyze your content
+          using our AI model.
+          <br />
+          <br />
+          For example, if you upload a 10-minute video, the processing time
+          indicates how long it will take our AI model to handle that specific
+          10-minute video, and in this case, it will be approximately 10
+          minutes.
+        </div>
+      ),
       free: "60 minutes",
       basic: "150 minutes",
       pro: "3600 minutes",
+    },
+    {
+      featureName: "Retention period",
+      info: (
+        <div>
+          The retention period indicates how long your videos will be stored on
+          our platform before automatic deletion.
+          <br />
+          <br />
+          For instance, with a 7-day retention period in the free plan, your
+          videos remain accessible for viewing or scheduling during this time.
+          After 7 days, they are automatically removed to manage storage
+          efficiently and align with your subscription level.
+        </div>
+      ),
+      // info: (
+      //   <div>
+      //     The retention period is the duration during which your videos will be
+      //     stored on our platform before being automatically removed.
+      //     <br />
+      //     <br />
+      //     Let's take an example: If you're on the free plan with a 7-day
+      //     retention period, it means that your videos will be accessible for
+      //     viewing or scheduling for 7 days after you upload or publish them.
+      //     After this 7-day period, the videos will be automatically deleted from
+      //     the platform.
+      //     <br />
+      //     <br />
+      //     This ensures that our platform efficiently manages storage space and
+      //     keeps your content in line with your chosen subscription level.
+      //   </div>
+      // ),
+      free: "7 days",
+      basic: "30 days",
+      pro: "90 days",
     },
     {
       featureName: "Auto AI 9:16 Cropping",
@@ -78,7 +126,29 @@ export default function Pricing() {
     },
     {
       featureName:
-        "Translate Your Videos to 20+ Languages (while keeping your own voice and tone)",
+        "Voice Translations",
+      info: (
+        <div>
+          Experience authentic multilingual videos with our Voice Translation
+          feature, allowing you to speak in English, Spanish, or any language
+          while preserving your original voice and tone.
+          <br />
+          <br />
+          Seamlessly transform
+          your voice to sound as if you were speaking in another language,
+          ensuring a natural and fluent experience across multiple languages.
+        </div>
+      ),
+      // info: (
+      //   <div>
+      //     Unlock new opportunities and broaden your social presence with our
+      //     Voice Translation Feature. Speak in English, Spanish, or any language,
+      //     maintaining your original voice and tone. This powerful feature not
+      //     only ensures authenticity but also enhances visibility, leading to
+      //     more views. Expand your reach across different language channels, and
+      //     tap into fresh possibilities for your content.
+      //   </div>
+      // ),
       free: "Coming soon",
       basic: "Coming soon",
       pro: "Coming soon",
@@ -90,6 +160,10 @@ export default function Pricing() {
   const toggleSwitch = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
   };
+
+  useEffect(() => {
+    document.title = "Pricing";
+  }, []);
 
   return (
     <section>
@@ -295,7 +369,41 @@ export default function Pricing() {
                   return (
                     <tr key={index}>
                       <td className="bg-[#060709] text-white">
-                        {row.featureName}
+                        <div className="flex flex-row hustify-between items-center gap-2">
+                          <div>{row.featureName}</div>
+                          {/* check if there is info key, and if there is add (i) icon with Tooltip */}
+                          {row.info && (
+                            <Tooltip
+                              title={
+                                <div className="!text-sm p-2">{row.info}</div>
+                              }
+                              componentsProps={{
+                                tooltip: {
+                                  sx: {
+                                    bgcolor: "#18181b",
+                                  },
+                                },
+                              }}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#006AFF"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="lucide lucide-info"
+                              >
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4" />
+                                <path d="M12 8h.01" />
+                              </svg>
+                            </Tooltip>
+                          )}
+                        </div>
                       </td>
                       <td>
                         {row.free === "tick" ? (
