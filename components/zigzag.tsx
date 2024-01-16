@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import FeatImage01 from "../public/images/band.png";
 import FeatImage02 from "../public/images/goldPlayBtn.jpg";
-import FeatImage03 from "../public/images/band.png";
+import FeatImage03 from "../public/images/create-content.jpg";
+import FeatImage04 from "../public/images/monetize.jpg";
 
 export default function Zigzag() {
   return (
@@ -246,7 +247,7 @@ export default function Zigzag() {
               >
                 <Image
                   className="max-w-full mx-auto md:max-w-none h-auto"
-                  src={FeatImage02}
+                  src={FeatImage04}
                   width={540}
                   height={405}
                   alt="Features 02"

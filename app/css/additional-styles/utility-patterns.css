@@ -60,7 +60,7 @@ li {
 }
 
 .hero-input {
-  @apply border-none;
+  @apply border-none ring-0;
 }
 
 .input-wrapper {

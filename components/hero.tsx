@@ -249,7 +249,7 @@ export default function Hero() {
                           <input
                             id="newsletter"
                             type="url"
-                            className="form-input w-full text-white px-3 py-3 text-sm bg-transparent"
+                            className="form-input hero-input  w-full text-white px-3 py-3 text-sm bg-transparent"
                             placeholder="YouTube Video URL"
                             required
                           />
@@ -290,7 +290,7 @@ export default function Hero() {
 
             {/* Desktop Wide */}
             <div className="desktop-wide h-full w-full">
-              <p className="text-gray-500 text-center">
+              <p className="hidden md:flex text-gray-500 text-center">
                 Here will be our promotion video (currently in progress)
               </p>
 
@@ -311,7 +311,7 @@ export default function Hero() {
 
             {/* Desktop */}
             <div className="desktop h-full w-full">
-              <p className="text-gray-500 text-center">
+              <p className="hidden md:flex text-gray-500 text-center">
                 Here will be our promotion video (currently in progress)
               </p>
 
@@ -339,7 +339,7 @@ export default function Hero() {
 
             {/* Mobile */}
             <div className="h-full w-full md:hidden flex justify-center mt-12">
-              <p className="text-gray-500 text-center">
+              <p className="hidden md:flex text-gray-500 text-center">
                 Here will be our promotion video (currently in progress)
               </p>
               {/* Horizontal */}
