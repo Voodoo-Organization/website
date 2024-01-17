@@ -125,8 +125,7 @@ export default function Pricing() {
       pro: "Coming soon",
     },
     {
-      featureName:
-        "Voice Translations",
+      featureName: "Voice Translations",
       info: (
         <div>
           Experience authentic multilingual videos with our Voice Translation
@@ -134,9 +133,9 @@ export default function Pricing() {
           while preserving your original voice and tone.
           <br />
           <br />
-          Seamlessly transform
-          your voice to sound as if you were speaking in another language,
-          ensuring a natural and fluent experience across multiple languages.
+          Seamlessly transform your voice to sound as if you were speaking in
+          another language, ensuring a natural and fluent experience across
+          multiple languages.
         </div>
       ),
       // info: (
@@ -389,9 +388,12 @@ export default function Pricing() {
                           {/* check if there is info key, and if there is add (i) icon with Tooltip */}
                           {row.info && (
                             <Tooltip
+                              className=" cursor-pointer"
+                              enterTouchDelay={0}
                               title={
                                 <div className="!text-sm p-2">{row.info}</div>
                               }
+                              id={"tooltip-" + index.toString()}
                               componentsProps={{
                                 tooltip: {
                                   sx: {
