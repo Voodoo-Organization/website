@@ -153,6 +153,21 @@ export default function Pricing() {
       basic: "Coming soon",
       pro: "Coming soon",
     },
+    {
+      featureName: "Highlights",
+      info: (
+        <div>
+          Automatically create captivating highlights from your long-form content. 
+          <br />
+          <br />
+          For example, generate a compilation of the most exciting moments, such as goals, from a lengthy football game into a concise and engaging highlight teaser.
+        </div>
+      ),
+      free: "Coming soon",
+      basic: "Coming soon",
+      pro: "Coming soon",
+    }
+    
   ];
 
   const [isYearly, setIsYearly] = useState(false);
