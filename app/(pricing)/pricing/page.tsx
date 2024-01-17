@@ -165,6 +165,20 @@ export default function Pricing() {
       free: "Coming soon",
       basic: "Coming soon",
       pro: "Coming soon",
+    },
+    {
+      featureName: "Teasers",
+      info: (
+        <div>
+          Automated creation & upload of highlights before you go live as a teaser to your audience.
+          <br />
+          <br />
+          For example, if you are scheduled to go live on YouTube with ready made content at 16:00 pm, you can automatically create a teaser of the most exciting moments from your content and upload it to your social media channels at 15:00 pm to build anticipation and drive traffic to your live stream.          
+        </div>
+      ),
+      free: "Coming soon",
+      basic: "Coming soon",
+      pro: "Coming soon",
     }
     
   ];
