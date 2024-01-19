@@ -301,7 +301,7 @@ export default function Hero() {
                 data-aos-delay="450"
               >
                 <video
-                  src="/videos/video-placeholder.mp4"
+                  src="/videos/promo.mp4"
                   autoPlay
                   muted
                   loop
@@ -311,9 +311,9 @@ export default function Hero() {
 
             {/* Desktop */}
             <div className="desktop h-full w-full">
-              <p className="hidden md:flex text-gray-500 text-center">
+              {/* <p className="hidden md:flex text-gray-500 text-center">
                 Here will be our promotion video (currently in progress)
-              </p>
+              </p> */}
 
               {/* <button className="btn mute text-white">mute</button> */}
               {/* Horizontal */}
@@ -329,7 +329,7 @@ export default function Hero() {
               >
                 <video
                   id="video"
-                  src="/videos/video-placeholder.mp4"
+                  src="/videos/promo.mp4"
                   autoPlay
                   muted
                   loop
@@ -339,9 +339,9 @@ export default function Hero() {
 
             {/* Mobile */}
             <div className="h-full w-full md:hidden flex justify-center mt-12">
-              <p className="hidden md:flex text-gray-500 text-center">
+              {/* <p className="hidden md:flex text-gray-500 text-center">
                 Here will be our promotion video (currently in progress)
-              </p>
+              </p> */}
               {/* Horizontal */}
               <div
                 className="bg-zinc-900 w-[90%] rounded-xl overflow-hidden"
@@ -349,7 +349,7 @@ export default function Hero() {
                 data-aos-delay="450"
               >
                 <video
-                  src="/videos/video-placeholder.mp4"
+                  src="/videos/promo.mp4"
                   autoPlay
                   muted
                   loop
