@@ -42,9 +42,9 @@ export default function Hero() {
         </svg>
       </div> */}
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 my-auto md:pb-24">
         {/* Hero content */}
-        <div className="flex flex-col justify-between items-center md:pt-12">
+        {/* <div className="flex flex-col justify-between items-center md:pt-24"> */}
           <div className="pt-32 md:pt-24 md:flex md:flex-row md:items-center gap-16">
             {/* Section header */}
             <div className="text-center md:text-start w-full">
@@ -84,7 +84,7 @@ export default function Hero() {
               </div>
               <div className="max-w-3xl mx-auto">
                 <p
-                  className="text-lg text-[#858BA0] mb-8"
+                  className="text-base md:text-lg text-[#858BA0] mb-8"
                   data-aos="zoom-y-out"
                   data-aos-delay="150"
                 >
@@ -368,7 +368,7 @@ export default function Hero() {
             videoHeight={1080}
           /> */}
           </div>
-        </div>
+        {/* </div> */}
       </div>
 
       {/* <div className="pt-24 flex flex-row gap-24 justify-center items-center z-[30] pb-12 px-6 md:px-0 overflow-x-auto md:overflow-hidden">
