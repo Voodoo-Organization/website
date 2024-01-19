@@ -79,7 +79,7 @@ export default function Hero() {
                   className="text-3xl md:text-4xl font-bold text-white tracking-wider"
                   data-aos="zoom-y-out"
                 >
-                  10 Shorts
+                  10 Clips
                 </h1>
               </div>
               <div className="max-w-3xl mx-auto">

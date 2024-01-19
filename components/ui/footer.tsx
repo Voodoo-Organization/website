@@ -189,7 +189,7 @@ export default function Footer() {
         {/* Bottom area */}
         <div className="md:flex md:items-center md:justify-between py-4 md:py-8 border-t  border-zinc-900">
           {/* Social as */}
-          <ul className="flex mb-4 md:order-1 md:ml-4 md:mb-0">
+          {/* <ul className="flex mb-4 md:order-1 md:ml-4 md:mb-0">
             <li>
               <a
                 href="#0"
@@ -235,7 +235,7 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
-          </ul>
+          </ul> */}
 
           {/* Copyrights note */}
           <div className="text-sm text-[#858BA0] mr-4">

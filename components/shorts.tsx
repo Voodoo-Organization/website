@@ -23,7 +23,7 @@ export default function Shorts() {
               Trusted by over 20,000 YouTubers
             </h2> */}
             <p className="text-xl text-[#858BA0]" data-aos="zoom-y-out">
-              Our AI automatically creates, schedules and uploads viral short
+              Our AI automatically creates, schedules and uploads viral clips
             </p>
           </div>
           <div className="videos max-w-none w-[100vw] px-0 mx-0">
