@@ -322,13 +322,7 @@ export default function Hero() {
               //     "0px 0px 0px 1px rgba(0, 106, 255, 0.5), 0px 0px 0px 2px rgba(0, 106, 255, 0.25), 0px 0px 0px 3px rgba(0, 106, 255, 0.15)",
               // }}
             >
-              <video
-                id="video"
-                src="/videos/promo.mp4"
-                autoPlay
-                muted
-                loop
-              ></video>
+              <video src="/videos/promo.mp4" autoPlay muted loop></video>
             </div>
           </div>
 

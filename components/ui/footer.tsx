@@ -240,6 +240,7 @@ export default function Footer() {
           {/* Copyrights note */}
           <div className="text-sm text-[#858BA0] mr-4">
             &copy; Voodoo.tube All rights reserved.
+            <p>MAGOU INVESTMENTS LLC</p>
           </div>
         </div>
       </div>

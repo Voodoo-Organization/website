@@ -30,6 +30,7 @@ export default function RootLayout({
           name="facebook-domain-verification"
           content="gz1z89frahu7t537pjl82qpvmm1i18"
         />
+        <meta name="business-name" content="MAGOU INVESTMENTS LLC" />
       </head>
       <body
         className={`${inter.variable} font-inter antialiased bg-[#0E1015] text-gray-900 tracking-tight`}
