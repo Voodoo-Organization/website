@@ -34,8 +34,14 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* <Logo /> */}
-            <a className="font-extrabold text-white text-xl" href="/">
-              VOODOO
+            <a className="flex flex-row gap-0 items-center" href="/">
+              <img src="/images/v-blue.png" className="w-10" />
+              <div className="font-extrabold text-blue-600 text-2xl ml-[-10px]">
+                OODOO
+              </div>
+              {/* <div className="font-extrabold text-white text-xl">
+                VOODOO
+              </div> */}
             </a>
           </div>
 

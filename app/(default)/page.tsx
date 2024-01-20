@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Voodoo",
-  description: "Page description",
+  description:
+    "Voodoo is an AI automation tool for YouTubers that automatically creates, schedules and uploads viral short clips from your long-form videos.",
 };
 
 import Hero from "@/components/hero";
