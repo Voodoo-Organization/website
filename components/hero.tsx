@@ -290,9 +290,9 @@ export default function Hero() {
 
             {/* Desktop Wide */}
             <div className="desktop-wide h-full w-full">
-              <p className="hidden md:flex text-gray-500 text-center">
+              {/* <p className="hidden md:flex text-gray-500 text-center">
                 Here will be our promotion video (currently in progress)
-              </p>
+              </p> */}
 
               {/* Horizontal */}
               <div
@@ -300,12 +300,7 @@ export default function Hero() {
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
-                <video
-                  src="/videos/promo.mp4"
-                  autoPlay
-                  muted
-                  loop
-                ></video>
+                <video src="/videos/promo.mp4" autoPlay muted loop></video>
               </div>
             </div>
 
@@ -348,12 +343,7 @@ export default function Hero() {
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
-                <video
-                  src="/videos/promo.mp4"
-                  autoPlay
-                  muted
-                  loop
-                ></video>
+                <video src="/videos/promo.mp4" autoPlay muted loop></video>
               </div>
             </div>
 
