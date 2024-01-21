@@ -36,6 +36,46 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/otf/Poppins-Regular.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("../../public/fonts/otf/Poppins-Medium.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../../public/fonts/otf/Poppins-SemiBold.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../public/fonts/otf/Poppins-Bold.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../../public/fonts/otf/Poppins-Black.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
