@@ -301,7 +301,7 @@ export default function Hero() {
                 data-aos-delay="450"
               >
                 <video
-                  src="/videos/promo.webm"
+                  src="https://storage.googleapis.com/voodoo-website/promo.webm"
                   autoPlay
                   muted
                   loop
@@ -329,7 +329,7 @@ export default function Hero() {
               >
                 <video
                   id="video"
-                  src="/videos/promo.webm"
+                  src="https://storage.googleapis.com/voodoo-website/promo.webm"
                   autoPlay
                   muted
                   loop
@@ -349,7 +349,7 @@ export default function Hero() {
                 data-aos-delay="450"
               >
                 <video
-                  src="/videos/promo.webm"
+                  src="https://storage.googleapis.com/voodoo-website/promo.webm"
                   autoPlay
                   muted
                   loop
