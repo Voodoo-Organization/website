@@ -212,7 +212,7 @@ export default function Hero() {
                               <span className="z-[-1] absolute w-72 h-72 opacity-5 flex items-center justify-center bg-[#006AFF] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
                             </div>
 
-                            <div className="flex flex-row gap-2 items-center bg-[#006AFF] rounded-r-full py-3">
+                            <div className="hero-button-bg flex flex-row gap-2 items-center bg-[#006AFF] rounded-r-full py-3">
                               <p className="text-white px-4">Get Free Clips</p>
                             </div>
                           </button>
@@ -264,11 +264,11 @@ export default function Hero() {
                               <p className="text-white px-4">Get Free Clips</p>
                             </div>
                           </button>
-                          <button className="btn-text w-full">
+                          {/* <button className="btn-text w-full">
                             <div className="flex flex-row justify-center items-center rounded-full py-3">
                               <p className="text-[#006AFF] px-4">See Demos</p>
                             </div>
-                          </button>
+                          </button> */}
                         </div>
                         {/* Success message */}
                         {/* <p className="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> */}
