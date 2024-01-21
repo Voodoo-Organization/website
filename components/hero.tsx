@@ -265,7 +265,7 @@ export default function Hero() {
                             </div>
                           </button>
                           <button className="btn-text w-full">
-                            <div className="flex flex-row justify-center items-center bg-zinc-900 rounded-full py-3">
+                            <div className="flex flex-row justify-center items-center  rounded-full py-3">
                               <p className="text-[#006AFF] px-4">See Demos</p>
                             </div>
                           </button>
@@ -278,7 +278,7 @@ export default function Hero() {
 
                   {/* <div>
                     <a
-                      className="btn text-white bg-zinc-900 hover:bg-zinc-800 w-full sm:w-auto sm:ml-4"
+                      className="btn text-white  hover:bg-zinc-800 w-full sm:w-auto sm:ml-4"
                       href="#0"
                     >
                       Learn more
@@ -296,16 +296,13 @@ export default function Hero() {
 
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 w-[650px] rounded-xl overflow-hidden"
+                className=" w-[650px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
-                <video
+                <img
                   src="/videos/promo.gif"
-                  autoPlay
-                  muted
-                  loop
-                ></video>
+                ></img>
               </div>
             </div>
 
@@ -318,7 +315,7 @@ export default function Hero() {
               {/* <button className="btn mute text-white">mute</button> */}
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 w-[550px] rounded-xl overflow-hidden"
+                className=" w-[550px] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
                 // style={{
@@ -327,13 +324,10 @@ export default function Hero() {
                 //     "0px 0px 0px 1px rgba(0, 106, 255, 0.5), 0px 0px 0px 2px rgba(0, 106, 255, 0.25), 0px 0px 0px 3px rgba(0, 106, 255, 0.15)",
                 // }}
               >
-                <video
+                <img
                   id="video"
                   src="/videos/promo.gif"
-                  autoPlay
-                  muted
-                  loop
-                ></video>
+                ></img>
               </div>
             </div>
 
@@ -344,16 +338,13 @@ export default function Hero() {
               </p> */}
               {/* Horizontal */}
               <div
-                className="bg-zinc-900 w-[90%] rounded-xl overflow-hidden"
+                className=" w-[90%] rounded-xl overflow-hidden"
                 data-aos="zoom-y-out"
                 data-aos-delay="450"
               >
-                <video
+                <img
                   src="/videos/promo.gif"
-                  autoPlay
-                  muted
-                  loop
-                ></video>
+                ></img>
               </div>
             </div>
 
