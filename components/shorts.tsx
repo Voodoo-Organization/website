@@ -2,14 +2,14 @@ import React from "react";
 
 export default function Shorts() {
   const videos = [
-    "/shorts/alexhormozi.mp4",
-    "/shorts/biggerpockets.mp4",
-    "/shorts/buggati.mp4",
-    "/shorts/cody.mp4",
-    "/shorts/doac.mp4",
-    "/shorts/dog.mp4",
-    "/shorts/purple.mp4",
-    "/shorts/red.mp4",
+    "https://storage.googleapis.com/voodoo-website/alexhormozi.webm",
+    "https://storage.googleapis.com/voodoo-website/biggerpockets.webm",
+    "https://storage.googleapis.com/voodoo-website/buggati.webm",
+    "https://storage.googleapis.com/voodoo-website/cody.webm",
+    "https://storage.googleapis.com/voodoo-website/doac.webm",
+    "https://storage.googleapis.com/voodoo-website/dog.webm",
+    "https://storage.googleapis.com/voodoo-website/purple.webm",
+    "https://storage.googleapis.com/voodoo-website/red.webm",
   ];
 
   return (
