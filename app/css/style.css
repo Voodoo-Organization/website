@@ -309,7 +309,7 @@ html::-webkit-scrollbar {
   opacity: 1;
 }
 
-.hero-btn:hover .hero-button-bg {
+/* .hero-btn:hover .hero-button-bg {
   background: transparent !important;
   border-left: 1px solid #006aff !important;
-}
+} */
