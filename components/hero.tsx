@@ -290,9 +290,6 @@ export default function Hero() {
 
             {/* Desktop Wide */}
             <div className="desktop-wide h-full w-full">
-              <p className="hidden md:flex text-gray-500 text-center">
-                Here will be our promotion video (currently in progress)
-              </p>
 
               {/* Horizontal */}
               <div
@@ -311,9 +308,6 @@ export default function Hero() {
 
             {/* Desktop */}
             <div className="desktop h-full w-full">
-              {/* <p className="hidden md:flex text-gray-500 text-center">
-                Here will be our promotion video (currently in progress)
-              </p> */}
 
               {/* <button className="btn mute text-white">mute</button> */}
               {/* Horizontal */}
@@ -339,9 +333,6 @@ export default function Hero() {
 
             {/* Mobile */}
             <div className="h-full w-full md:hidden flex justify-center mt-12">
-              {/* <p className="hidden md:flex text-gray-500 text-center">
-                Here will be our promotion video (currently in progress)
-              </p> */}
               {/* Horizontal */}
               <div
                 className="w-[90%] rounded-xl overflow-hidden"
