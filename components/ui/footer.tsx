@@ -10,9 +10,12 @@ export default function Footer() {
           <div className="sm:col-span-12 lg:col-span-3">
             <div className="mb-2">
               {/* <Logo /> */}
-              <a className="font-extrabold text-[#006AFF] text-xl" href="/">
-                VOODOO
-              </a>
+              <a className="flex flex-row gap-0 items-center" href="/">
+              <img src="/images/v-blue.png" className="w-10" />
+              <div className="font-extrabold text-blue-600 text-2xl ml-[-10px]">
+                OODOO
+              </div>
+            </a>
             </div>
             <div className="text-sm text-[#858BA0]">
               <a
