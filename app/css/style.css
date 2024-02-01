@@ -9,13 +9,6 @@
 
 @import "tailwindcss/utilities";
 
-/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
-@layer utilities {
-  .rtl {
-    direction: rtl;
-  }
-}
-
 /* Google Fonts */
 
 /* montserrat */
@@ -26,6 +19,14 @@
 
 /* outfit */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
+
+
+/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+}
 
 /* From Public Directory */
 @font-face {
@@ -93,6 +94,7 @@ h6 {
 /* disable scrollbar */
 html {
   overflow: -moz-scrollbars-none;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

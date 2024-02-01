@@ -156,10 +156,13 @@ export default function Pricing() {
       featureName: "Highlights",
       info: (
         <div>
-          Automatically create captivating highlights from your long-form content. 
+          Automatically create captivating highlights from your long-form
+          content.
           <br />
           <br />
-          For example, generate a compilation of the most exciting moments, such as goals, from a lengthy football game into a concise and engaging highlight teaser.
+          For example, generate a compilation of the most exciting moments, such
+          as goals, from a lengthy football game into a concise and engaging
+          highlight teaser.
         </div>
       ),
       free: "Coming soon",
@@ -170,20 +173,26 @@ export default function Pricing() {
       featureName: "Teasers",
       info: (
         <div>
-          Automated creation & upload of highlights before you go live as a teaser to your audience.
+          Automated creation & upload of highlights before you go live as a
+          teaser to your audience.
           <br />
           <br />
-          For example, if you are scheduled to go live on YouTube with ready made content at 16:00 pm, you can automatically create a teaser of the most exciting moments from your content and upload it to your social media channels at 15:00 pm to build anticipation and drive traffic to your live stream.          
+          For example, if you are scheduled to go live on YouTube with ready
+          made content at 16:00 pm, you can automatically create a teaser of the
+          most exciting moments from your content and upload it to your social
+          media channels at 15:00 pm to build anticipation and drive traffic to
+          your live stream.
         </div>
       ),
       free: "Coming soon",
       basic: "Coming soon",
       pro: "Coming soon",
-    }
-    
+    },
   ];
 
   const [isYearly, setIsYearly] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+  const [tableOffset, setTableOffset] = useState(0);
 
   const toggleSwitch = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
@@ -191,7 +200,44 @@ export default function Pricing() {
 
   useEffect(() => {
     document.title = "Pricing";
+
+    const handleScroll = () => {
+      const tableElement = document.getElementById("pricing-table");
+
+      if (tableElement) {
+        const rect = tableElement.getBoundingClientRect();
+        const newOffset = rect.top + window.scrollY;
+
+        setIsFixed(window.scrollY >= newOffset);
+        console.log("Fixed", window.scrollY >= newOffset);
+        setTableOffset(newOffset);
+
+        console.log("tableOffset", newOffset, "window.scrollY", window.scrollY);
+      }
+    };
+
+    const throttledHandleScroll = () => {
+      // Throttle the scroll events using requestAnimationFrame for better performance
+      window.requestAnimationFrame(handleScroll);
+    };
+
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener("scroll", throttledHandleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", throttledHandleScroll);
+    };
   }, []);
+
+  const tablehHeaderStyle =
+    "!text-2xl !transition-all !duration-250 !ease-in-out";
+  const tablehTextStyle =
+    "!text-3xl !transition-all !duration-250 !ease-in-out";
+  const tablehButtonStyle =
+    "!py-2 !text-sm !transition-all !duration-250 !ease-in-out";
+  const tableHiddenTextStyle =
+    "!hidden !transition-all !duration-250 !ease-in-out";
 
   return (
     <section>
@@ -250,7 +296,10 @@ export default function Pricing() {
             </div>
           </div>
 
-          <table className="table flex flex-row flex-no-wrap">
+          <table
+            id="pricing-table"
+            className={`table flex flex-row flex-no-wrap`}
+          >
             <thead>
               <tr>
                 {/* <th className="mobile-header"></th> */}
@@ -262,77 +311,117 @@ export default function Pricing() {
                   </p>
                 </th>
                 {/* add hidden class if want to hide on mobile */}
-                <th className="hidden sm:table-cell">
-                  <h1 className="!text-3xl">Free</h1>
+                <th
+                  className={`hidden sm:table-cell ${
+                    isFixed ? tablehHeaderStyle : ""
+                  }`}
+                >
+                  <h1 className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}>
+                    Free
+                  </h1>
                   <h1>
                     <div className="flex justify-center items-center">
-                      <h1>$0</h1>
-                      <div className="text-sm text-[#858BA0]">/ Month</div>
+                      <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
+                        $0
+                      </h1>
+                      <div className="text-sm text-[#858BA0]">/ Lifetime</div>
                     </div>
-                    <div className="text-sm text-[#858BA0] py-2">
+                    <div
+                       className={`text-sm text-[#858BA0] py-2 ${isFixed ? tableHiddenTextStyle : ""}`}
+                    >
                       Free forever
                     </div>
                   </h1>
                   <Link
                     href="/signup"
-                    className="btn-sm px-6 py-3 text-white bg-zinc-900 hover:bg-zinc-800"
+                    className={`btn-sm px-6 py-3 text-white bg-zinc-900 hover:bg-zinc-800 ${
+                      isFixed ? tablehButtonStyle : ""
+                    }`}
                   >
                     <div>Create an account</div>
                   </Link>
                 </th>
-                <th className="hidden sm:table-cell">
-                  <h1 className="!text-3xl">Starter</h1>
+                <th className={`hidden sm:table-cell`}>
+                  <h1 className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}>
+                    Starter
+                  </h1>
                   <h1>
                     {isYearly ? (
                       <div className="flex justify-center items-center">
-                        <h1 className="line-through !mx-2 !text-3xl !text-[#006AFF]">
+                        <h1
+                          className={`line-through !mx-2 !text-3xl !text-[#006AFF] ${
+                            isFixed ? tablehTextStyle : ""
+                          }`}
+                        >
                           $49
                         </h1>{" "}
                         <h1 className="!text-4xl">$39 </h1>{" "}
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     ) : (
-                      <div className="flex justify-center items-center">
-                        <h1>$49</h1>
+                      <div
+                        className={`flex justify-center items-center ${
+                          isFixed ? tablehTextStyle : ""
+                        }`}
+                      >
+                        <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
+                          $49
+                        </h1>
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     )}
-                    <div className="text-sm text-[#858BA0] py-2">
+                    <div className={`text-sm text-[#858BA0] py-2 ${isFixed ? tableHiddenTextStyle : ""}`}>
                       For individual creators
                     </div>
                   </h1>
                   <Link
                     href="/signup"
-                    className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
+                    className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
+                      isFixed ? tablehButtonStyle : ""
+                    }`}
                   >
                     <div>Start Free Trial</div>
                   </Link>
                 </th>
-                <th className="hidden sm:table-cell">
+                <th className={`hidden sm:table-cell`}>
                   <h1>
-                    <h1 className="!text-3xl">Pro</h1>
+                    <h1
+                      className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}
+                    >
+                      Pro
+                    </h1>
                     {isYearly ? (
                       <div className="flex justify-center items-center">
-                        <h1 className="line-through !mx-2 !text-3xl !text-[#006AFF]">
+                        <h1
+                          className={`line-through !mx-2 !text-3xl !text-[#006AFF] ${
+                            isFixed ? tablehTextStyle : ""
+                          }`}
+                        >
                           $79
                         </h1>{" "}
-                        <h1 className="!text-4xl">$59 </h1>{" "}
+                        <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
+                          $59{" "}
+                        </h1>{" "}
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     ) : (
                       <div className="flex justify-center items-center">
-                        <h1>$79</h1>
+                        <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
+                          $79
+                        </h1>
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     )}
                     {/* <div className="text-sm text-[#858BA0]">/ Month</div> */}
-                    <div className="text-sm text-[#858BA0] py-2">
+                    <div className={`text-sm text-[#858BA0] py-2 ${isFixed ? tableHiddenTextStyle : ""}`}>
                       For professional creators
                     </div>
                   </h1>
                   <Link
                     href="/signup"
-                    className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
+                    className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
+                      isFixed ? tablehButtonStyle : ""
+                    }`}
                   >
                     <div>Start Free Trial</div>
                   </Link>
