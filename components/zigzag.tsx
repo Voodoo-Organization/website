@@ -54,7 +54,7 @@ export default function Zigzag() {
                     rearranging, scheduling and uploading. Let us do the hard
                     work
                   </p>
-                  <ul className="text-lg text-[#858BA0] -mb-2">
+                  {/* <ul className="text-lg text-[#858BA0] -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
                         className="w-3 h-3 fill-current text-[#006AFF] mr-2 shrink-0"
@@ -93,7 +93,7 @@ export default function Zigzag() {
                         scheduling, and uploading for you
                       </span>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Zigzag() {
                     Our mission is to help you grow your channel and increase
                     your social media presence on all platforms
                   </p>
-                  <ul className="text-lg text-[#858BA0] -mb-2">
+                  {/* <ul className="text-lg text-[#858BA0] -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
                         className="w-3 h-3 fill-current text-[#006AFF] mr-2 shrink-0"
@@ -167,7 +167,7 @@ export default function Zigzag() {
                         all platforms
                       </span>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function Zigzag() {
                     We are giving you all the tools your channel needs so you
                     can concentrate on what you do best, creating content
                   </p>
-                  <ul className="text-lg text-[#858BA0] -mb-2">
+                  {/* <ul className="text-lg text-[#858BA0] -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
                         className="w-3 h-3 fill-current text-[#006AFF] mr-2 shrink-0"
@@ -233,7 +233,7 @@ export default function Zigzag() {
                       </svg>
                       <span>Grow your audience and increase your revenue</span>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
@@ -268,7 +268,7 @@ export default function Zigzag() {
                     earning up to 50% of the monthly recurring revenue of every
                     user you refer
                   </p>
-                  <ul className="text-lg text-[#858BA0] -mb-2">
+                  {/* <ul className="text-lg text-[#858BA0] -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
                         className="w-3 h-3 fill-current text-[#006AFF] mr-2 shrink-0"
@@ -303,7 +303,7 @@ export default function Zigzag() {
                       </svg>
                       <span>No limits on how much you can earn</span>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
