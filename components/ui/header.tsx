@@ -25,8 +25,8 @@ export default function Header() {
     <header
       className={`fixed w-full z-[999] md:bg-opacity-100 transition duration-300 ease-in-out ${
         !top
-          ? "bg-[#0E1015] backdrop-blur-sm shadow-lg"
-          : "bg-[#0E1015] backdrop-blur-sm shadow-lg"
+          ? "bg-[#0E1015] backdrop-blur-sm"
+          : "bg-[#0E1015] backdrop-blur-sm"
       }`}
     >
       <div className="max-w-[90%] mx-auto px-5 sm:px-6">
