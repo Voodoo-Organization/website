@@ -24,9 +24,7 @@ export default function Header() {
   return (
     <header
       className={`fixed w-full z-[999] md:bg-opacity-100 transition duration-300 ease-in-out ${
-        !top
-          ? "bg-[#0E1015] backdrop-blur-sm"
-          : "bg-[#0E1015] backdrop-blur-sm"
+        !top ? "bg-[#0E1015] backdrop-blur-sm" : "bg-[#0E1015] backdrop-blur-sm"
       }`}
     >
       <div className="max-w-[90%] mx-auto px-5 sm:px-6">
@@ -36,17 +34,17 @@ export default function Header() {
             {/* <Logo /> */}
             <a className="flex flex-row gap-0 items-center" href="/">
               <img src="/images/v-blue.png" className="w-10" />
-              <div className="font-extrabold text-blue-600 text-2xl ml-[-10px]">
+              <div className="font-medium text-blue-600 text-2xl ml-[-10px]">
                 OODOO
               </div>
-              {/* <div className="font-extrabold text-white text-xl">
+              {/* <div className="font-medium text-white text-xl">
                 VOODOO
               </div> */}
             </a>
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow">
+          <nav className="hidden lg:flex lg:grow">
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
@@ -65,14 +63,14 @@ export default function Header() {
                   About
                 </Link>
               </li> */}
-              {/* <li>
+              <li>
                 <Link
                   href="/blog"
                   className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
                 >
                   Blog
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   href="/affiliate"
@@ -100,6 +98,7 @@ export default function Header() {
               <li>
                 <Link
                   href="https://voodoo-fe.vercel.app/sign-up"
+                  target="_blank"
                   className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ml-3"
                 >
                   <span className="!text-white">Start Free Trial</span>

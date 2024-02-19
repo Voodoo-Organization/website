@@ -1,6 +1,36 @@
-import Logo from "./logo";
+"use client";
+import React, { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("/api/subscription", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setMessage("Email submitted successfully!");
+        setEmail("");
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || "Failed to submit email");
+      }
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      setError("Error submitting email");
+    }
+  };
+
   return (
     <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -11,11 +41,11 @@ export default function Footer() {
             <div className="mb-2">
               {/* <Logo /> */}
               <a className="flex flex-row gap-0 items-center" href="/">
-              <img src="/images/v-blue.png" className="w-10" />
-              <div className="font-extrabold text-blue-600 text-2xl ml-[-10px]">
-                OODOO
-              </div>
-            </a>
+                <img src="/images/v-blue.png" className="w-10" />
+                <div className="font-medium text-blue-600 text-2xl ml-[-10px]">
+                  OODOO
+                </div>
+              </a>
             </div>
             <div className="text-sm text-[#858BA0]">
               <a
@@ -66,41 +96,9 @@ export default function Footer() {
             </ul>
           </div> */}
 
-          {/* 3rd block */}
-          {/* <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-[#006AFF] font-medium mb-2">Resources</h6>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
-                  Documentation
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
-                  Tutorials & Guides
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
-                  Blog
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
-                  Support Center
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
-                  Partners
-                </a>
-              </li>
-            </ul>
-          </div> */}
-
-          {/* 4th block */}
+          {/* 3th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-[#006AFF] font-medium mb-2">Company</h6>
+            <h6 className="text-[#006AFF] font-medium mb-2">Links</h6>
             <ul className="text-sm">
               <li className="mb-2">
                 <a href="/" className="text-[#858BA0] hover:text-[#006AFF]">
@@ -128,6 +126,18 @@ export default function Footer() {
                   Pricing
                 </a>
               </li>
+            </ul>
+          </div>
+
+          {/* 4rd block */}
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h6 className="text-[#006AFF] font-medium mb-2">Resources</h6>
+            <ul className="text-sm">
+              <li className="mb-2">
+                <a href="/blog" className="text-[#858BA0] hover:text-[#006AFF]">
+                  Blog
+                </a>
+              </li>
               <li className="mb-2">
                 <a
                   href="/privacy-policy"
@@ -136,6 +146,24 @@ export default function Footer() {
                   Privacy Policy
                 </a>
               </li>
+              <li className="mb-2">
+                <a
+                  href="/terms-of-service"
+                  className="text-[#858BA0] hover:text-[#006AFF]"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              {/* <li className="mb-2">
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
+                  Support Center
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#0" className="text-[#858BA0] hover:text-[#006AFF]">
+                  Documentation
+                </a>
+              </li> */}
             </ul>
           </div>
 
@@ -145,7 +173,7 @@ export default function Footer() {
             <p className="text-sm text-[#858BA0] mb-4">
               Be the first to know about our new features and updates.
             </p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="flex flex-wrap mb-4">
                 <div className="w-full">
                   <label className="block text-sm sr-only" htmlFor="newsletter">
@@ -157,6 +185,8 @@ export default function Footer() {
                       type="email"
                       className="form-input w-full text-white px-3 py-2 pr-12 text-sm bg-transparent"
                       placeholder="Your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                     />
                     <button
@@ -181,8 +211,12 @@ export default function Footer() {
                       </svg>
                     </button>
                   </div>
-                  {/* Success message */}
-                  {/* <p className="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> */}
+                  {message && (
+                    <p className="mt-2 text-green-600 text-sm">{message}</p>
+                  )}
+                  {error && (
+                    <p className="mt-2 text-red-600 text-sm">{error}</p>
+                  )}
                 </div>
               </div>
             </form>

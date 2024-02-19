@@ -34,7 +34,7 @@ li {
 /* Buttons */
 .btn,
 .btn-sm {
-  @apply font-semibold inline-flex items-center justify-center border border-transparent rounded-full leading-snug !text-white;
+  @apply font-medium inline-flex items-center justify-center border border-transparent rounded-full leading-snug !text-white;
 }
 
 .btn {
@@ -46,7 +46,7 @@ li {
 }
 
 .btn-text {
-  @apply font-semibold;
+  @apply font-medium;
 }
 
 /* Forms */
@@ -74,7 +74,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #0e1015 inset !important;
   -webkit-background-clip: text !important;
-  border: none !important;
   outline: none !important;
   caret-color: #fff !important;
 }

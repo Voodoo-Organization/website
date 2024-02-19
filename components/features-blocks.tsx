@@ -32,7 +32,8 @@ export default function FeaturesBlocks() {
               <div>
                 <a
                   className="btn text-white bg-[#006AFF] hover:bg-blue-800 w-full mb-4 sm:w-auto sm:mb-0"
-                  href="#0"
+                  href="https://voodoo-fe.vercel.app/sign-up"
+                  target="_blank"
                 >
                   Start free trial
                 </a>
@@ -49,63 +50,6 @@ export default function FeaturesBlocks() {
           </div>
 
           {/* Items */}
-          {/* <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
-            <div className="relative flex flex-col items-center p-6 bg-transparent rounded">
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
-                Headless CMS
-              </h4>
-              <p className="text-[#858BA0] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-
-            <div className="relative flex flex-col items-center p-6 bg-transparent rounded">
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
-                Headless CMS
-              </h4>
-              <p className="text-[#858BA0] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-
-            <div className="relative flex flex-col items-center p-6 bg-transparent rounded">
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
-                Headless CMS
-              </h4>
-              <p className="text-[#858BA0] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-
-            <div className="relative flex flex-col items-center p-6 bg-transparent rounded">
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
-                Headless CMS
-              </h4>
-              <p className="text-[#858BA0] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-
-            <div className="relative flex flex-col items-center p-6 bg-transparent rounded">
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
-                Headless CMS
-              </h4>
-              <p className="text-[#858BA0] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-
-            <div className="relative flex flex-col items-center p-6 bg-transparent rounded">
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">
-                Headless CMS
-              </h4>
-              <p className="text-[#858BA0] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div> */}
-
-          {/* Items Snir */}
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
             {/* 1st item */}
             <div className="relative flex flex-col items-start p-6 bg-transparent rounded">
