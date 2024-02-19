@@ -133,11 +133,11 @@ export default function Footer() {
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-[#006AFF] font-medium mb-2">Resources</h6>
             <ul className="text-sm">
-              <li className="mb-2">
+              {/* <li className="mb-2">
                 <a href="/blog" className="text-[#858BA0] hover:text-[#006AFF]">
                   Blog
                 </a>
-              </li>
+              </li> */}
               <li className="mb-2">
                 <a
                   href="/privacy-policy"

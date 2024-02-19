@@ -63,14 +63,14 @@ export default function Header() {
                   About
                 </Link>
               </li> */}
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="font-medium text-[#858BA0] hover:text-white px-5 py-3 flex items-center"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/affiliate"
