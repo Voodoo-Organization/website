@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
 
 // export const metadata = {
@@ -190,9 +190,113 @@ export default function Pricing() {
     },
   ];
 
+  const options = [
+    {
+      value: 200,
+      label: "200 minutes",
+      price: 18,
+    },
+    {
+      value: 400,
+      label: "400 minutes",
+      price: 36,
+    },
+    {
+      value: 600,
+      label: "600 minutes",
+      price: 54,
+    },
+    {
+      value: 800,
+      label: "800 minutes",
+      price: 72,
+    },
+    {
+      value: 1000,
+      label: "1000 minutes",
+      price: 89,
+    },
+    {
+      value: 1200,
+      label: "1200 minutes",
+      price: 105,
+    },
+    {
+      value: 1400,
+      label: "1400 minutes",
+      price: 123,
+    },
+    {
+      value: 1600,
+      label: "1600 minutes",
+      price: 140,
+    },
+    {
+      value: 1800,
+      label: "1800 minutes",
+      price: 158,
+    },
+    {
+      value: 2000,
+      label: "2000 minutes",
+      price: 175,
+    },
+    {
+      value: 2200,
+      label: "2200 minutes",
+      price: 193,
+    },
+    {
+      value: 2400,
+      label: "2400 minutes",
+      price: 210,
+    },
+    {
+      value: 2600,
+      label: "2600 minutes",
+      price: 228,
+    },
+    {
+      value: 2800,
+      label: "2800 minutes",
+      price: 245,
+    },
+    {
+      value: 3000,
+      label: "3000 minutes",
+      price: 263,
+    },
+    {
+      value: 3200,
+      label: "3200 minutes",
+      price: 280,
+    },
+    {
+      value: 3400,
+      label: "3400 minutes",
+      price: 298,
+    },
+    {
+      value: 3600,
+      label: "3600 minutes",
+      price: 315,
+    },
+  ];
+
   const [isYearly, setIsYearly] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const [tableOffset, setTableOffset] = useState(0);
+
+  const [starterPrice, setStarterPrice] = useState(9);
+
+  const [proPrice, setProPrice] = useState(options[0].price);
+  const [proDiscountedPrice, setProDiscountedPrice] = useState(
+    Math.round((options[0].price * 10) / 12)
+  );
+
+  useEffect(() => {
+    setProDiscountedPrice(Math.round((proPrice * 10) / 12));
+  }, [proPrice]);
 
   const toggleSwitch = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
@@ -302,7 +406,6 @@ export default function Pricing() {
           >
             <thead>
               <tr>
-                {/* <th className="mobile-header"></th> */}
                 <th>
                   <h1 className="text-2xl">Compare Plans</h1>
                   <p className="text-sm text-[#858BA0]">
@@ -316,7 +419,9 @@ export default function Pricing() {
                     isFixed ? tablehHeaderStyle : ""
                   }`}
                 >
-                  <h1 className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}>
+                  <h1
+                    className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}
+                  >
                     Free
                   </h1>
                   <h1>
@@ -327,7 +432,9 @@ export default function Pricing() {
                       <div className="text-sm text-[#858BA0]">/ Lifetime</div>
                     </div>
                     <div
-                       className={`text-sm text-[#858BA0] py-2 ${isFixed ? tableHiddenTextStyle : ""}`}
+                      className={`text-sm text-[#858BA0] py-2 ${
+                        isFixed ? tableHiddenTextStyle : ""
+                      }`}
                     >
                       Free forever
                     </div>
@@ -342,7 +449,9 @@ export default function Pricing() {
                   </Link>
                 </th>
                 <th className={`hidden sm:table-cell`}>
-                  <h1 className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}>
+                  <h1
+                    className={`${isFixed ? tablehHeaderStyle : "!text-3xl"}`}
+                  >
                     Starter
                   </h1>
                   <h1>
@@ -353,9 +462,9 @@ export default function Pricing() {
                             isFixed ? tablehTextStyle : ""
                           }`}
                         >
-                          $49
+                          ${starterPrice}
                         </h1>{" "}
-                        <h1 className="!text-4xl">$39 </h1>{" "}
+                        <h1 className="!text-4xl">${starterPrice} </h1>{" "}
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     ) : (
@@ -365,12 +474,16 @@ export default function Pricing() {
                         }`}
                       >
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
-                          $49
+                          ${starterPrice}
                         </h1>
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     )}
-                    <div className={`text-sm text-[#858BA0] py-2 ${isFixed ? tableHiddenTextStyle : ""}`}>
+                    <div
+                      className={`text-sm text-[#858BA0] py-2 ${
+                        isFixed ? tableHiddenTextStyle : ""
+                      }`}
+                    >
                       For individual creators
                     </div>
                   </h1>
@@ -383,6 +496,7 @@ export default function Pricing() {
                     <div>Start Free Trial</div>
                   </Link>
                 </th>
+
                 <th className={`hidden sm:table-cell`}>
                   <h1>
                     <h1
@@ -397,26 +511,52 @@ export default function Pricing() {
                             isFixed ? tablehTextStyle : ""
                           }`}
                         >
-                          $79
+                          ${proPrice}
                         </h1>{" "}
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
-                          $59{" "}
+                          ${proDiscountedPrice}
                         </h1>{" "}
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     ) : (
                       <div className="flex justify-center items-center">
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
-                          $79
+                          ${proPrice}
                         </h1>
                         <div className="text-sm text-[#858BA0]">/ Month</div>
                       </div>
                     )}
                     {/* <div className="text-sm text-[#858BA0]">/ Month</div> */}
-                    <div className={`text-sm text-[#858BA0] py-2 ${isFixed ? tableHiddenTextStyle : ""}`}>
+                    <div
+                      className={`text-sm text-[#858BA0] py-2 ${
+                        isFixed ? tableHiddenTextStyle : ""
+                      }`}
+                    >
                       For professional creators
                     </div>
                   </h1>
+
+                  <select
+                    className="cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 py-2"
+                    defaultValue={options[0].value}
+                    onChange={(e) => {
+                      const value = parseInt(e.target.value);
+                      const price = options.find(
+                        (option) => option.value === value
+                      )?.price;
+                      setProPrice(price as number);
+                      setProDiscountedPrice(Math.round(proPrice * 10));
+                    }}
+                  >
+                    {options.map((option, index) => {
+                      return (
+                        <option key={index} value={option.value}>
+                          {option.label}
+                        </option>
+                      );
+                    })}
+                  </select>
+
                   <Link
                     href="/signup"
                     className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
@@ -445,7 +585,7 @@ export default function Pricing() {
                         fontSize: "2rem",
                       }}
                     >
-                      {isYearly ? "$39 " : "$49 "}
+                      {isYearly ? <>${starterPrice}</> : <>${starterPrice}</>}
                       <div className="text-sm text-[#858BA0] py-2">/ Month</div>
                     </h1>
                     <h1
@@ -453,11 +593,31 @@ export default function Pricing() {
                         fontSize: "2rem",
                       }}
                     >
-                      {isYearly ? "$59 " : "$79 "}
+                      {isYearly ? <>${proDiscountedPrice}</> : <>${proPrice}</>}
                       <div className="text-sm text-[#858BA0] py-2">/ Month</div>
                     </h1>
                   </div>
 
+                  <select
+                    className="cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 py-2"
+                    defaultValue={options[0].value}
+                    onChange={(e) => {
+                      const value = parseInt(e.target.value);
+                      const price = options.find(
+                        (option) => option.value === value
+                      )?.price;
+                      setProPrice(price as number);
+                      setProDiscountedPrice(Math.round(proPrice * 10));
+                    }}
+                  >
+                    {options.map((option, index) => {
+                      return (
+                        <option key={index} value={option.value}>
+                          {option.label}
+                        </option>
+                      );
+                    })}
+                  </select>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-2 text-white bg-[#006AFF] hover:bg-blue-800"
