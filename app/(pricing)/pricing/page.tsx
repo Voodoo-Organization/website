@@ -378,16 +378,19 @@ export default function Pricing() {
                 >
                   Yearly
                 </div>
-                <div className="hidden xl:block 3xl:hidden absolute top-[26%] left-[59%] w-full">
+                <div className="hidden 2xl:block 3xl:hidden absolute top-[20%] left-[59%] w-full">
                   <img src="/images/2-months-free.png" />
                 </div>
-                <div className="hidden lg:block xl:hidden absolute top-[26%] left-[62%] w-full">
+                <div className="hidden xl:block 2xl:hidden absolute top-[23%] left-[59%] w-full">
                   <img src="/images/2-months-free.png" />
                 </div>
-                <div className="hidden md:block lg:hidden absolute top-[26%] left-[64%] w-full">
+                <div className="hidden lg:block xl:hidden absolute top-[23%] left-[62%] w-full">
                   <img src="/images/2-months-free.png" />
                 </div>
-                <div className="hidden sm:block md:hidden absolute top-[20%] left-[66%] w-full">
+                <div className="hidden md:block lg:hidden absolute top-[23%] left-[64%] w-full">
+                  <img src="/images/2-months-free.png" />
+                </div>
+                <div className="hidden sm:block md:hidden absolute top-[17%] left-[66%] w-full">
                   <img src="/images/2-months-free.png" />
                 </div>
               </div>
@@ -408,7 +411,7 @@ export default function Pricing() {
               <tr>
                 <th>
                   <h1 className="text-2xl">Compare Plans</h1>
-                  <p className="text-sm text-[#858BA0]">
+                  <p className="text-sm font-light text-[#858BA0]">
                     Choose your workspace plan according to your organisational
                     plan
                   </p>
@@ -429,10 +432,10 @@ export default function Pricing() {
                       <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
                         $0
                       </h1>
-                      <div className="text-sm text-[#858BA0]">/ Lifetime</div>
+                      <div className="text-sm font-light text-[#858BA0] ml-2">/ Lifetime</div>
                     </div>
                     <div
-                      className={`text-sm text-[#858BA0] py-2 ${
+                      className={`text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
                       }`}
                     >
@@ -447,6 +450,13 @@ export default function Pricing() {
                   >
                     <div>Create an account</div>
                   </Link>
+                  <div
+                      className={`text-sm font-light text-center text-[#858BA0] py-2 ${
+                        isFixed ? tableHiddenTextStyle : ""
+                      }`}
+                    >
+                      No credit card required
+                    </div>
                 </th>
                 <th className={`hidden sm:table-cell`}>
                   <h1
@@ -465,7 +475,7 @@ export default function Pricing() {
                           ${starterPrice}
                         </h1>{" "}
                         <h1 className="!text-4xl">${starterPrice} </h1>{" "}
-                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                        <div className="text-sm font-light text-[#858BA0] ml-2">/ Month</div>
                       </div>
                     ) : (
                       <div
@@ -476,11 +486,11 @@ export default function Pricing() {
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
                           ${starterPrice}
                         </h1>
-                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                        <div className="text-sm font-light text-[#858BA0] ml-2">/ Month</div>
                       </div>
                     )}
                     <div
-                      className={`text-sm text-[#858BA0] py-2 ${
+                      className={`text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
                       }`}
                     >
@@ -516,19 +526,19 @@ export default function Pricing() {
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
                           ${proDiscountedPrice}
                         </h1>{" "}
-                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                        <div className="text-sm font-light text-[#858BA0] ml-2">/ Month</div>
                       </div>
                     ) : (
                       <div className="flex justify-center items-center">
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
                           ${proPrice}
                         </h1>
-                        <div className="text-sm text-[#858BA0]">/ Month</div>
+                        <div className="text-sm font-light text-[#858BA0] ml-2">/ Month</div>
                       </div>
                     )}
                     {/* <div className="text-sm text-[#858BA0]">/ Month</div> */}
                     <div
-                      className={`text-sm text-[#858BA0] py-2 ${
+                      className={`text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
                       }`}
                     >
@@ -768,7 +778,7 @@ export default function Pricing() {
               <tr>
                 <th>
                   <h1 className="text-4xl text-center">
-                    Free <div className="text-sm text-[#858BA0]"> / Month</div>
+                    Free <div className="text-sm font-light text-[#858BA0] ml-2"> / Month</div>
                   </h1>
                   <Link
                     href="/signup"
@@ -779,7 +789,7 @@ export default function Pricing() {
                 </th>
                 <th>
                   <h1>
-                    $49 <div className="text-sm text-[#858BA0]">/ Month</div>
+                    $49 <div className="text-sm font-light text-[#858BA0] ml-2">/ Month</div>
                   </h1>
                   <Link
                     href="/signup"
@@ -790,7 +800,7 @@ export default function Pricing() {
                 </th>
                 <th>
                   <h1>
-                    $79 <div className="text-sm text-[#858BA0]">/ Month</div>
+                    $79 <div className="text-sm font-light text-[#858BA0] ml-2">/ Month</div>
                   </h1>
                   <Link
                     href="/signup"
