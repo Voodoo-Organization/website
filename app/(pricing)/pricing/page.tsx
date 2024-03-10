@@ -39,8 +39,9 @@ export default function Pricing() {
           <br />
           For instance, with a 7-day retention period in the free plan, your
           videos remain accessible for viewing or scheduling during this time.
-          After 7 days, they are automatically removed to manage storage
-          efficiently and align with your subscription level.
+          After 7 days, they are automatically removed.
+          {/*  to manage storage
+          efficiently and align with your subscription level */}
         </div>
       ),
       // info: (
@@ -118,6 +119,12 @@ export default function Pricing() {
       basic: ["youtube-shorts", "tiktok", "instagram-reels", "facebook"],
       pro: ["youtube-shorts", "tiktok", "instagram-reels", "facebook"],
     },
+    // {
+    //   featureName: "YouTube Channels",
+    //   free: "1",
+    //   basic: "3",
+    //   pro: "Unlimited",
+    // },
     {
       featureName: "AI Stickers",
       free: "Coming soon",
@@ -554,7 +561,11 @@ export default function Pricing() {
                     ) : (
                       <div className="flex justify-center items-center">
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
-                          {proPrice === 0 ? <span className="text-2xl">Contact us</span> : "$" + proPrice}
+                          {proPrice === 0 ? (
+                            <span className="text-2xl">Contact us</span>
+                          ) : (
+                            "$" + proPrice
+                          )}
                         </h1>
                         {proPrice !== 0 && (
                           <div className="text-sm font-light text-[#858BA0] ml-2">
@@ -580,27 +591,26 @@ export default function Pricing() {
                     proPrice
                   )}
 
-                  {
-                    proPrice === 0 ? (
-                      <Link
-                        href="https://forms.gle/ryA6umJyAsdnevCs7"
-                        className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
-                          isFixed ? tablehButtonStyle : ""
-                        }`}
-                      >
-                        <div>Contact us</div>
-                      </Link>
-                    ) : (
-                      <Link
-                        href="/signup"
-                        className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
-                          isFixed ? tablehButtonStyle : ""
-                        }`}
-                      >
-                        <div>Start Free Trial</div>
-                      </Link>
-                    )
-                  }
+                  {proPrice === 0 ? (
+                    <Link
+                      href="https://forms.gle/ryA6umJyAsdnevCs7"
+                      target="_blank"
+                      className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
+                        isFixed ? tablehButtonStyle : ""
+                      }`}
+                    >
+                      <div>Contact us</div>
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/signup"
+                      className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
+                        isFixed ? tablehButtonStyle : ""
+                      }`}
+                    >
+                      <div>Start Free Trial</div>
+                    </Link>
+                  )}
 
                   {/* <Link
                     href="/signup"
@@ -610,7 +620,6 @@ export default function Pricing() {
                   >
                     <div>Start Free Trial</div>
                   </Link> */}
-
 
                   {/* <div
                     className={`text-sm font-light text-center text-[#858BA0] py-2 ${
