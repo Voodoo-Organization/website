@@ -281,6 +281,11 @@ export default function Pricing() {
       label: "3600 minutes",
       price: 315,
     },
+    {
+      value: "unlimited",
+      label: "Unlimited",
+      price: "Contact us for a quote",
+    },
   ];
 
   const [isYearly, setIsYearly] = useState(false);
@@ -480,7 +485,7 @@ export default function Pricing() {
                         <div className="text-sm font-light text-[#858BA0] ml-2">
                           / Month
                         </div>
-                      </div>                     
+                      </div>
                     ) : (
                       <div
                         className={`flex justify-center items-center ${
@@ -527,7 +532,7 @@ export default function Pricing() {
                     >
                       Pro
                     </h1>
-                    {isYearly ? (
+                    {isYearly && proPrice !== 0 ? (
                       <div className="flex justify-center items-center">
                         <h1
                           className={`line-through !mx-2 !text-3xl !text-[#006AFF] ${
@@ -537,7 +542,10 @@ export default function Pricing() {
                           ${proPrice}
                         </h1>{" "}
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
-                          ${proDiscountedPrice}
+                          $
+                          {proDiscountedPrice === 0
+                            ? "Contact us"
+                            : proDiscountedPrice}
                         </h1>{" "}
                         <div className="text-sm font-light text-[#858BA0] ml-2">
                           / Month
@@ -546,11 +554,13 @@ export default function Pricing() {
                     ) : (
                       <div className="flex justify-center items-center">
                         <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
-                          ${proPrice}
+                          {proPrice === 0 ? <span className="text-2xl">Contact us</span> : "$" + proPrice}
                         </h1>
-                        <div className="text-sm font-light text-[#858BA0] ml-2">
-                          / Month
-                        </div>
+                        {proPrice !== 0 && (
+                          <div className="text-sm font-light text-[#858BA0] ml-2">
+                            / Month
+                          </div>
+                        )}
                       </div>
                     )}
                     {/* <div className="text-sm text-[#858BA0]">/ Month</div> */}
@@ -563,35 +573,45 @@ export default function Pricing() {
                     </div>
                   </div>
 
-                  <select
-                    className="cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 py-2"
-                    defaultValue={options[0].value}
-                    onChange={(e) => {
-                      const value = parseInt(e.target.value);
-                      const price = options.find(
-                        (option) => option.value === value
-                      )?.price;
-                      setProPrice(price as number);
-                      setProDiscountedPrice(Math.round(proPrice * 10));
-                    }}
-                  >
-                    {options.map((option, index) => {
-                      return (
-                        <option key={index} value={option.value}>
-                          {option.label}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  {ProcessingTimeSelector(
+                    options,
+                    setProPrice,
+                    setProDiscountedPrice,
+                    proPrice
+                  )}
 
-                  <Link
+                  {
+                    proPrice === 0 ? (
+                      <Link
+                        href="https://forms.gle/ryA6umJyAsdnevCs7"
+                        className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
+                          isFixed ? tablehButtonStyle : ""
+                        }`}
+                      >
+                        <div>Contact us</div>
+                      </Link>
+                    ) : (
+                      <Link
+                        href="/signup"
+                        className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
+                          isFixed ? tablehButtonStyle : ""
+                        }`}
+                      >
+                        <div>Start Free Trial</div>
+                      </Link>
+                    )
+                  }
+
+                  {/* <Link
                     href="/signup"
                     className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
                       isFixed ? tablehButtonStyle : ""
                     }`}
                   >
                     <div>Start Free Trial</div>
-                  </Link>
+                  </Link> */}
+
+
                   {/* <div
                     className={`text-sm font-light text-center text-[#858BA0] py-2 ${
                       isFixed ? tableHiddenTextStyle : ""
@@ -632,26 +652,12 @@ export default function Pricing() {
                     </h1>
                   </div>
 
-                  <select
-                    className="cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 py-2"
-                    defaultValue={options[0].value}
-                    onChange={(e) => {
-                      const value = parseInt(e.target.value);
-                      const price = options.find(
-                        (option) => option.value === value
-                      )?.price;
-                      setProPrice(price as number);
-                      setProDiscountedPrice(Math.round(proPrice * 10));
-                    }}
-                  >
-                    {options.map((option, index) => {
-                      return (
-                        <option key={index} value={option.value}>
-                          {option.label}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  {ProcessingTimeSelector(
+                    options,
+                    setProPrice,
+                    setProDiscountedPrice,
+                    proPrice
+                  )}
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-2 text-white bg-[#006AFF] hover:bg-blue-800"
@@ -903,5 +909,52 @@ function Social(platforms: string[]) {
         );
       })}
     </div>
+  );
+}
+
+function ProcessingTimeSelector(
+  options: any,
+  setProPrice: any,
+  setProDiscountedPrice: any,
+  proPrice: any
+) {
+  return (
+    <select
+      className="cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 py-2"
+      defaultValue={options[0].value}
+      // onChange={(e) => {
+      //   const value = parseInt(e.target.value);
+      //   const price = options.find((option) => option.value === value)?.price;
+      //   setProPrice(price as any);
+      //   setProDiscountedPrice(Math.round(proPrice * 10));
+      // }}
+      onChange={(e) => {
+        const value = e.target.value;
+        if (value === "unlimited") {
+          // Handle the case when the option value is "unlimited"
+          // For example, set a default price or take any other action
+          setProPrice(0);
+          setProDiscountedPrice(0);
+        } else {
+          // Handle other option values
+          const parsedValue = parseInt(value);
+          const price = options.find(
+            (option) => option.value === parsedValue
+          )?.price;
+          if (price !== undefined) {
+            setProPrice(price as any);
+            setProDiscountedPrice(Math.round(price * 10));
+          }
+        }
+      }}
+    >
+      {options.map((option, index) => {
+        return (
+          <option key={index} value={option.value}>
+            {option.label}
+          </option>
+        );
+      })}
+    </select>
   );
 }
