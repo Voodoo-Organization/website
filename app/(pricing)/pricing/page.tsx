@@ -303,11 +303,11 @@ export default function Pricing() {
 
   const [proPrice, setProPrice] = useState(options[0].price);
   const [proDiscountedPrice, setProDiscountedPrice] = useState(
-    Math.round((options[0].price * 10) / 12)
+    Math.round((options[0].price as number * 10) / 12)
   );
 
   useEffect(() => {
-    setProDiscountedPrice(Math.round((proPrice * 10) / 12));
+    setProDiscountedPrice(Math.round((proPrice as number * 10) / 12));
   }, [proPrice]);
 
   const toggleSwitch = () => {
@@ -970,8 +970,15 @@ function Social(platforms: string[]) {
   );
 }
 
+
+interface Option {
+  value: string | number;
+  label: string;
+  price?: number;
+}
+
 function ProcessingTimeSelector(
-  options: any,
+  options: Option[], // Provide a type annotation for the options parameter
   setProPrice: any,
   setProDiscountedPrice: any,
   proPrice: any,
@@ -983,27 +990,21 @@ function ProcessingTimeSelector(
         isFixed ? "py-2" : "py-3"
       }`}
       defaultValue={options[0].value}
-      // onChange={(e) => {
-      //   const value = parseInt(e.target.value);
-      //   const price = options.find((option) => option.value === value)?.price;
-      //   setProPrice(price as any);
-      //   setProDiscountedPrice(Math.round(proPrice * 10));
-      // }}
+      
       onChange={(e) => {
         const value = e.target.value;
         if (value === "unlimited") {
           // Handle the case when the option value is "unlimited"
-          // For example, set a default price or take any other action
           setProPrice(0);
           setProDiscountedPrice(0);
         } else {
           // Handle other option values
-          const parsedValue = parseInt(value);
+          const parsedValue = parseInt(value, 10);
           const price = options.find(
             (option) => option.value === parsedValue
           )?.price;
           if (price !== undefined) {
-            setProPrice(price as any);
+            setProPrice(price);
             setProDiscountedPrice(Math.round(price * 10));
           }
         }
@@ -1019,3 +1020,4 @@ function ProcessingTimeSelector(
     </select>
   );
 }
+
