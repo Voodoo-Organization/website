@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useState, memo, useRef } from "react";
 import Tooltip from "@mui/material/Tooltip";
 
 // export const metadata = {
@@ -312,6 +312,41 @@ export default function Pricing() {
 
   const toggleSwitch = () => {
     setIsYearly((prevIsYearly) => !prevIsYearly);
+
+    if (!isYearly) {
+      // Play the lottie file
+      const lottie = require("lottie-web");
+
+      // Create a container inside the toggle-switch-animation element
+      const animationContainer = document.createElement("div");
+      animationContainer.id = "animation-container";
+      animationContainer.style.zIndex = "9999999";
+      animationContainer.style.width = "750px";
+      animationContainer.style.height = "750px";
+
+      // Use type assertion to tell TypeScript that getElementById will not return null
+      const toggleSwitchAnimation = document.getElementById(
+        "toggle-switch-animation"
+      )!;
+      toggleSwitchAnimation.appendChild(animationContainer);
+
+      // Load the animation
+      const animation = lottie.loadAnimation({
+        container: animationContainer,
+        renderer: "svg",
+        loop: false,
+        autoplay: true,
+        path: "https://lottie.host/4c85313a-f50c-4a7c-88f9-e2350d3864f2/OlC19Y3dCl.json",
+      });
+
+      // Listen for the animation's "complete" event
+      animation.addEventListener("complete", function () {
+        // Remove the animation container from the DOM
+        animationContainer.remove();
+      });
+    } else {
+      document.getElementById("animation-container")?.remove();
+    }
   };
 
   useEffect(() => {
@@ -325,10 +360,10 @@ export default function Pricing() {
         const newOffset = rect.top + window.scrollY;
 
         setIsFixed(window.scrollY >= newOffset);
-        console.log("Fixed", window.scrollY >= newOffset);
+        // console.log("Fixed", window.scrollY >= newOffset);
         setTableOffset(newOffset);
 
-        console.log("tableOffset", newOffset, "window.scrollY", window.scrollY);
+        // console.log("tableOffset", newOffset, "window.scrollY", window.scrollY);
       }
     };
 
@@ -374,9 +409,11 @@ export default function Pricing() {
                   Monthly
                   {/* <div className="relative bottom-16 left-32 h-20" /> */}
                 </div>
+
                 <div
                   className="toggle relative inline-block w-auto align-middle select-none"
                   onClick={toggleSwitch}
+                  id="toggle-switch"
                 >
                   <input type="checkbox" checked={isYearly} readOnly />
                   <label></label>
@@ -421,12 +458,13 @@ export default function Pricing() {
           >
             <thead>
               <tr>
-                <th>
+                <th className={`${isFixed ? "align-top" : ""}`}>
                   <h1 className="text-2xl">Compare Plans</h1>
                   <p className="text-sm font-light text-[#858BA0]">
                     Choose your workspace plan according to your organisational
                     plan
                   </p>
+                  {/* <p className="text-sm font-light text-[#858BA0] mt-4">Get 2 months free for the yearly pro plan {" "}<span className="text-xl">🎉</span></p> */}
                 </th>
                 {/* add hidden class if want to hide on mobile */}
                 <th
@@ -482,13 +520,13 @@ export default function Pricing() {
                     {isYearly ? (
                       <div className="flex justify-center items-center">
                         <h1
-                          className={`line-through !mx-2 !text-3xl !text-[#006AFF] ${
+                          className={`!text-2xl line-through !mx-2 !text-[#006AFF] ${
                             isFixed ? tablehTextStyle : ""
                           }`}
                         >
                           ${starterPrice}
                         </h1>{" "}
-                        <h1 className="!text-4xl">${starterPrice} </h1>{" "}
+                        <h1 className="!text-3xl">${starterPrice} </h1>{" "}
                         <div className="text-sm font-light text-[#858BA0] ml-2">
                           / Month
                         </div>
@@ -499,7 +537,11 @@ export default function Pricing() {
                           isFixed ? tablehTextStyle : ""
                         }`}
                       >
-                        <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
+                        <h1
+                          className={`!text-3xl ${
+                            isFixed ? tablehTextStyle : ""
+                          }`}
+                        >
                           ${starterPrice}
                         </h1>
                         <div className="text-sm font-light text-[#858BA0] ml-2">
@@ -542,13 +584,17 @@ export default function Pricing() {
                     {isYearly && proPrice !== 0 ? (
                       <div className="flex justify-center items-center">
                         <h1
-                          className={`line-through !mx-2 !text-3xl !text-[#006AFF] ${
+                          className={`line-through !mx-2 !text-2xl !text-[#006AFF] ${
                             isFixed ? tablehTextStyle : ""
                           }`}
                         >
                           ${proPrice}
                         </h1>{" "}
-                        <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
+                        <h1
+                          className={`!text-3xl ${
+                            isFixed ? tablehTextStyle : ""
+                          }`}
+                        >
                           $
                           {proDiscountedPrice === 0
                             ? "Contact us"
@@ -588,7 +634,8 @@ export default function Pricing() {
                     options,
                     setProPrice,
                     setProDiscountedPrice,
-                    proPrice
+                    proPrice,
+                    isFixed
                   )}
 
                   {proPrice === 0 ? (
@@ -665,7 +712,8 @@ export default function Pricing() {
                     options,
                     setProPrice,
                     setProDiscountedPrice,
-                    proPrice
+                    proPrice,
+                    isFixed
                   )}
                   <Link
                     href="/signup"
@@ -863,6 +911,7 @@ export default function Pricing() {
           </table>
         </div>
       </div>
+      <div id="toggle-switch-animation" className="pointer-events-none select-none w-full !absolute top-0 flex items-center justify-center"></div>
     </section>
   );
 }
@@ -925,11 +974,14 @@ function ProcessingTimeSelector(
   options: any,
   setProPrice: any,
   setProDiscountedPrice: any,
-  proPrice: any
+  proPrice: any,
+  isFixed: boolean
 ) {
   return (
     <select
-      className="cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 py-2"
+      className={`cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 ${
+        isFixed ? "py-2" : "py-3"
+      }`}
       defaultValue={options[0].value}
       // onChange={(e) => {
       //   const value = parseInt(e.target.value);

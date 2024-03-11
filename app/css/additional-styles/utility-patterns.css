@@ -138,8 +138,16 @@ input:-webkit-autofill {
   @apply hidden sm:table-cell;
 } */
 
+.table th:not(:first-child) {
+  @apply align-top;
+}
+
+/* .table th {
+  @apply align-top;
+} */
+
 .table th:not(:first-child) h1 {
-  @apply py-0 text-center text-4xl;
+  @apply py-0 text-center text-3xl;
 }
 
 .table th .btn-sm {
