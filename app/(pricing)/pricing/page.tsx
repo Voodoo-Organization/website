@@ -631,7 +631,7 @@ export default function Pricing() {
                   </div>
 
                   {ProcessingTimeSelector(
-                    options,
+                    options as Option[],
                     setProPrice,
                     setProDiscountedPrice,
                     proPrice,
@@ -709,7 +709,7 @@ export default function Pricing() {
                   </div>
 
                   {ProcessingTimeSelector(
-                    options,
+                    options as Option[],
                     setProPrice,
                     setProDiscountedPrice,
                     proPrice,
