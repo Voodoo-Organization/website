@@ -27,7 +27,7 @@ export default function Pricing() {
       ),
       free: "60 minutes",
       basic: "150 minutes",
-      pro: "3600 minutes",
+      pro: "selector",
     },
     {
       featureName: "Retention period",
@@ -303,11 +303,11 @@ export default function Pricing() {
 
   const [proPrice, setProPrice] = useState(options[0].price);
   const [proDiscountedPrice, setProDiscountedPrice] = useState(
-    Math.round((options[0].price as number * 10) / 12)
+    Math.round(((options[0].price as number) * 10) / 12)
   );
 
   useEffect(() => {
-    setProDiscountedPrice(Math.round((proPrice as number * 10) / 12));
+    setProDiscountedPrice(Math.round(((proPrice as number) * 10) / 12));
   }, [proPrice]);
 
   const toggleSwitch = () => {
@@ -402,8 +402,8 @@ export default function Pricing() {
               <div className="flex justify-center items-center mt-6">
                 <div
                   onClick={() => setIsYearly(false)}
-                  className={`monthly-text text-lg mx-3 ${
-                    !isYearly ? "font-bold text-[#006AFF]" : "text-[#858BA0]"
+                  className={`font-medium monthly-text text-lg mx-3 ${
+                    !isYearly ? "font-medium text-[#006AFF]" : "text-[#858BA0]"
                   }`}
                 >
                   Monthly
@@ -421,8 +421,8 @@ export default function Pricing() {
                 </div>
                 <div
                   onClick={() => setIsYearly(true)}
-                  className={`yearly-text text-lg mx-3 ${
-                    isYearly ? "font-bold text-[#006AFF]" : "text-[#858BA0]"
+                  className={`font-medium yearly-text text-lg mx-3 ${
+                    isYearly ? "font-medium text-[#006AFF]" : "text-[#858BA0]"
                   }`}
                 >
                   Yearly
@@ -477,7 +477,7 @@ export default function Pricing() {
                   >
                     Free
                   </h1>
-                  <h1>
+                  <div>
                     <div className="flex justify-center items-center">
                       <h1 className={`${isFixed ? tablehTextStyle : ""}`}>
                         $0
@@ -493,12 +493,12 @@ export default function Pricing() {
                     >
                       Free forever
                     </div>
-                  </h1>
+                  </div>
                   <Link
                     href="/signup"
                     className={`btn-sm px-6 py-3 text-white bg-zinc-900 hover:bg-zinc-800 ${
                       isFixed ? tablehButtonStyle : ""
-                    }`}
+                    } ${isYearly ? "hidden" : ""}`}
                   >
                     <div>Create an account</div>
                   </Link>
@@ -516,8 +516,24 @@ export default function Pricing() {
                   >
                     Starter
                   </h1>
-                  <h1>
-                    {isYearly ? (
+                  <div>
+                    <div
+                      className={`flex justify-center items-center ${
+                        isFixed ? tablehTextStyle : ""
+                      }`}
+                    >
+                      <h1
+                        className={`!text-3xl ${
+                          isFixed ? tablehTextStyle : ""
+                        }`}
+                      >
+                        ${starterPrice}
+                      </h1>
+                      <div className="text-sm font-light text-[#858BA0] ml-2">
+                        / Month
+                      </div>
+                    </div>
+                    {/* {isYearly ? (
                       <div className="flex justify-center items-center">
                         <h1
                           className={`!text-2xl line-through !mx-2 !text-[#006AFF] ${
@@ -548,7 +564,7 @@ export default function Pricing() {
                           / Month
                         </div>
                       </div>
-                    )}
+                    )} */}
                     <div
                       className={`text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
@@ -556,15 +572,22 @@ export default function Pricing() {
                     >
                       For individual creators
                     </div>
-                  </h1>
+                  </div>
                   <Link
                     href="/signup"
                     className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
                       isFixed ? tablehButtonStyle : ""
-                    }`}
+                    } ${isYearly ? "hidden" : ""}`}
                   >
                     <div>Start Free Trial</div>
                   </Link>
+                  {/* <div
+                    className={`px-6 py-3 text-center text-white ${
+                      isFixed ? tablehButtonStyle : ""
+                    } ${isYearly ? "" : "hidden"}`}
+                  >
+                    Not available for yearly
+                  </div> */}
                   {/* <div
                     className={`text-sm font-light text-center text-[#858BA0] py-2 ${
                       isFixed ? tableHiddenTextStyle : ""
@@ -630,13 +653,13 @@ export default function Pricing() {
                     </div>
                   </div>
 
-                  {ProcessingTimeSelector(
+                  {/* {ProcessingTimeSelector(
                     options as Option[],
                     setProPrice,
                     setProDiscountedPrice,
                     proPrice,
                     isFixed
-                  )}
+                  )} */}
 
                   {proPrice === 0 ? (
                     <Link
@@ -680,43 +703,52 @@ export default function Pricing() {
                 {/* Mobile version */}
                 <th className=" sm:hidden">
                   <div className="flex justify-between">
-                    <h1
+                    <div
                       style={{
                         fontSize: "2rem",
                       }}
                     >
-                      Free
+                      <h1 className="!text-2xl">Free</h1>
+                      {/* $0 */}
                       <div className="text-sm text-[#858BA0] py-2">
                         / Lifetime
                       </div>
-                    </h1>
-                    <h1
+                    </div>
+                    <div
                       style={{
                         fontSize: "2rem",
                       }}
                     >
+                      <h1 className="!text-2xl">Starter</h1>
                       {isYearly ? <>${starterPrice}</> : <>${starterPrice}</>}
                       <div className="text-sm text-[#858BA0] py-2">/ Month</div>
-                    </h1>
-                    <h1
+                    </div>
+                    <div
                       style={{
                         fontSize: "2rem",
                       }}
                     >
-                      {isYearly ? <>${proDiscountedPrice}</> : <>${proPrice}</>}
+                      <h1 className="!text-2xl">Pro</h1>
+                      {isYearly ? (
+                        <div className="flex flex-col justify-center items-center">
+                          <h1
+                            className={`!text-2xl line-through !mx-2 !text-[#006AFF]`}
+                          >
+                            ${proPrice}
+                          </h1>{" "}
+                          <h1 className="!text-3xl">${proDiscountedPrice}</h1>{" "}
+                        </div>
+                      ) : (
+                        <div className="flex justify-center items-center">
+                          <h1 className="!text-3xl">${proPrice}</h1>{" "}
+                        </div>
+                      )}
                       <div className="text-sm text-[#858BA0] py-2">/ Month</div>
-                    </h1>
+                    </div>
                   </div>
 
-                  {ProcessingTimeSelector(
-                    options as Option[],
-                    setProPrice,
-                    setProDiscountedPrice,
-                    proPrice,
-                    isFixed
-                  )}
                   <Link
-                    href="/signup"
+                    href="#plans"
                     className="btn-sm px-6 py-2 text-white bg-[#006AFF] hover:bg-blue-800"
                   >
                     <div>Continue</div>
@@ -845,6 +877,18 @@ export default function Pricing() {
                             <div className="sm:hidden pr-2">Pro</div>
                             <XIcon />{" "}
                           </div>
+                        ) : row.pro === "selector" ? (
+                          <div className="flex justify-between sm:justify-center items-center">
+                            {" "}
+                            <div className="sm:hidden pr-10">Pro</div>
+                            {ProcessingTimeSelector(
+                              options as Option[],
+                              setProPrice,
+                              setProDiscountedPrice,
+                              proPrice,
+                              isFixed
+                            )}
+                          </div>
                         ) : Array.isArray(row.pro) ? (
                           <div className="flex justify-between sm:justify-center items-center">
                             <div className="sm:hidden pr-2">Pro</div>
@@ -861,14 +905,14 @@ export default function Pricing() {
                   );
                 })}
             </tbody>
-            <tfoot className="sm:hidden">
+            <tfoot className="sm:hidden" id="plans">
               <tr>
                 <th>
-                  <h1 className="text-4xl text-center">
+                  <h1 className="text-3xl text-center">
                     Free{" "}
                     <div className="text-sm font-light text-[#858BA0] ml-2">
                       {" "}
-                      / Month
+                      / Lifetime
                     </div>
                   </h1>
                   <Link
@@ -879,12 +923,12 @@ export default function Pricing() {
                   </Link>
                 </th>
                 <th>
-                  <h1>
-                    $49{" "}
+                  <div className="flex justify-center items-center">
+                    <h1 className="!text-3xl">${starterPrice}</h1>{" "}
                     <div className="text-sm font-light text-[#858BA0] ml-2">
                       / Month
                     </div>
-                  </h1>
+                  </div>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
@@ -893,12 +937,28 @@ export default function Pricing() {
                   </Link>
                 </th>
                 <th>
-                  <h1>
-                    $79{" "}
-                    <div className="text-sm font-light text-[#858BA0] ml-2">
-                      / Month
-                    </div>
-                  </h1>
+                  <div>
+                    {isYearly ? (
+                      <div className="flex justify-center items-center">
+                        <h1
+                          className={`!text-2xl line-through !mx-2 !text-[#006AFF]`}
+                        >
+                          ${proPrice}
+                        </h1>{" "}
+                        <h1 className="!text-3xl">${proDiscountedPrice}</h1>{" "}
+                        <div className="text-sm font-light text-[#858BA0] ml-2">
+                          / Month
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex justify-center items-center">
+                        <h1 className="!text-3xl">${proPrice}</h1>{" "}
+                        <div className="text-sm font-light text-[#858BA0] ml-2">
+                          / Month
+                        </div>
+                      </div>
+                    )}
+                  </div>
                   <Link
                     href="/signup"
                     className="btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800"
@@ -911,7 +971,10 @@ export default function Pricing() {
           </table>
         </div>
       </div>
-      <div id="toggle-switch-animation" className="pointer-events-none select-none w-full !absolute top-0 flex items-center justify-center"></div>
+      <div
+        id="toggle-switch-animation"
+        className="pointer-events-none select-none w-full !absolute top-0 flex items-center justify-center"
+      ></div>
     </section>
   );
 }
@@ -970,7 +1033,6 @@ function Social(platforms: string[]) {
   );
 }
 
-
 interface Option {
   value: string | number;
   label: string;
@@ -990,7 +1052,6 @@ function ProcessingTimeSelector(
         isFixed ? "py-2" : "py-3"
       }`}
       defaultValue={options[0].value}
-      
       onChange={(e) => {
         const value = e.target.value;
         if (value === "unlimited") {
@@ -1020,4 +1081,3 @@ function ProcessingTimeSelector(
     </select>
   );
 }
-
