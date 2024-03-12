@@ -487,21 +487,41 @@ export default function Pricing() {
                       </div>
                     </div>
                     <div
-                      className={`text-sm font-light text-[#858BA0] py-2 ${
+                      className={`text-center text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
                       }`}
                     >
                       Free forever
                     </div>
                   </div>
-                  <Link
-                    href="/signup"
+                  {/* <button
                     className={`btn-sm px-6 py-3 text-white bg-zinc-900 hover:bg-zinc-800 ${
                       isFixed ? tablehButtonStyle : ""
-                    } ${isYearly ? "hidden" : ""}`}
+                    }`}
+                    onClick={() => {
+                      window.open("/signup", "_blank");
+                    }}
+                    disabled={isYearly}
                   >
-                    <div>Create an account</div>
-                  </Link>
+                    Create an account
+                  </button> */}
+
+                  <button
+                    className={`btn-sm px-6 py-3 text-white bg-[#181B20] hover:bg-[#252A32] ${
+                      isFixed ? tablehButtonStyle : ""
+                    } ${
+                      isYearly
+                        ? "bg-[#14171E] hover:!bg-[#14171E] hover:cursor-not-allowed"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      window.open("/signup", "_blank");
+                    }}
+                    disabled={isYearly}
+                  >
+                    {isYearly ? "Not Available" : "Create an account"}
+                  </button>
+
                   {/* <div
                     className={`text-sm font-light text-center text-[#858BA0] py-2 ${
                       isFixed ? tableHiddenTextStyle : ""
@@ -566,21 +586,30 @@ export default function Pricing() {
                       </div>
                     )} */}
                     <div
-                      className={`text-sm font-light text-[#858BA0] py-2 ${
+                      className={`text-center text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
                       }`}
                     >
                       For individual creators
                     </div>
                   </div>
-                  <Link
-                    href="/signup"
+
+                  <button
                     className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
                       isFixed ? tablehButtonStyle : ""
-                    } ${isYearly ? "hidden" : ""}`}
+                    } ${
+                      isYearly
+                        ? "bg-[#14171E] hover:!bg-[#14171E] hover:cursor-not-allowed"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      window.open("/signup", "_blank");
+                    }}
+                    disabled={isYearly}
                   >
-                    <div>Start Free Trial</div>
-                  </Link>
+                    {isYearly ? "Not Available" : "Start Free Trial"}
+                  </button>
+
                   {/* <div
                     className={`px-6 py-3 text-center text-white ${
                       isFixed ? tablehButtonStyle : ""
@@ -645,7 +674,7 @@ export default function Pricing() {
                     )}
                     {/* <div className="text-sm text-[#858BA0]">/ Month</div> */}
                     <div
-                      className={`text-sm font-light text-[#858BA0] py-2 ${
+                      className={`text-center text-sm font-light text-[#858BA0] py-2 ${
                         isFixed ? tableHiddenTextStyle : ""
                       }`}
                     >
@@ -662,24 +691,30 @@ export default function Pricing() {
                   )} */}
 
                   {proPrice === 0 ? (
-                    <Link
-                      href="https://forms.gle/ryA6umJyAsdnevCs7"
-                      target="_blank"
+                    <button
                       className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
                         isFixed ? tablehButtonStyle : ""
                       }`}
+                      onClick={() => {
+                        window.open(
+                          "https://forms.gle/ryA6umJyAsdnevCs7",
+                          "_blank"
+                        );
+                      }}
                     >
                       <div>Contact us</div>
-                    </Link>
+                    </button>
                   ) : (
-                    <Link
-                      href="/signup"
+                    <button
                       className={`btn-sm px-6 py-3 text-white bg-[#006AFF] hover:bg-blue-800 ${
                         isFixed ? tablehButtonStyle : ""
                       }`}
+                      onClick={() => {
+                        window.open("/signup", "_blank");
+                      }}
                     >
                       <div>Start Free Trial</div>
-                    </Link>
+                    </button>
                   )}
 
                   {/* <Link
