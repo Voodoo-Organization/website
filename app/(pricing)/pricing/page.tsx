@@ -1083,9 +1083,7 @@ function ProcessingTimeSelector(
 ) {
   return (
     <select
-      className={`cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mb-3 ${
-        isFixed ? "py-2" : "py-3"
-      }`}
+      className={`cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mx-4 py-3`}
       defaultValue={options[0].value}
       onChange={(e) => {
         const value = e.target.value;
