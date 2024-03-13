@@ -1082,35 +1082,37 @@ function ProcessingTimeSelector(
   isFixed: boolean
 ) {
   return (
-    <select
-      className={`cursor-pointer hover:bg-primary-600 hover:bg-opacity-20 bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full mx-4 py-3`}
-      defaultValue={options[0].value}
-      onChange={(e) => {
-        const value = e.target.value;
-        if (value === "unlimited") {
-          // Handle the case when the option value is "unlimited"
-          setProPrice(0);
-          setProDiscountedPrice(0);
-        } else {
-          // Handle other option values
-          const parsedValue = parseInt(value, 10);
-          const price = options.find(
-            (option) => option.value === parsedValue
-          )?.price;
-          if (price !== undefined) {
-            setProPrice(price);
-            setProDiscountedPrice(Math.round(price * 10));
+    <div className="hover:bg-primary-600 hover:bg-opacity-20 rounded-full">
+      <select
+        className={`cursor-pointer bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full py-3 focus:outline-none focus:border-primary-600`}
+        defaultValue={options[0].value}
+        onChange={(e) => {
+          const value = e.target.value;
+          if (value === "unlimited") {
+            // Handle the case when the option value is "unlimited"
+            setProPrice(0);
+            setProDiscountedPrice(0);
+          } else {
+            // Handle other option values
+            const parsedValue = parseInt(value, 10);
+            const price = options.find(
+              (option) => option.value === parsedValue
+            )?.price;
+            if (price !== undefined) {
+              setProPrice(price);
+              setProDiscountedPrice(Math.round(price * 10));
+            }
           }
-        }
-      }}
-    >
-      {options.map((option, index) => {
-        return (
-          <option key={index} value={option.value}>
-            {option.label}
-          </option>
-        );
-      })}
-    </select>
+        }}
+      >
+        {options.map((option, index) => {
+          return (
+            <option className="!bg-[#14171E]" key={index} value={option.value}>
+              {option.label}
+            </option>
+          );
+        })}
+      </select>
+    </div>
   );
 }
