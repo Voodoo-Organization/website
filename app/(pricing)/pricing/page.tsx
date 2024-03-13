@@ -1082,7 +1082,7 @@ function ProcessingTimeSelector(
   isFixed: boolean
 ) {
   return (
-    <div className="hover:bg-primary-600 hover:bg-opacity-20 rounded-full">
+    <div className="hover:bg-primary-600 hover:bg-opacity-20 rounded-full w-full px-4">
       <select
         className={`cursor-pointer bg-transparent text-white border-[1.5px] focus:ring-0 border-primary-600 w-full rounded-full py-3 focus:outline-none focus:border-primary-600`}
         defaultValue={options[0].value}
