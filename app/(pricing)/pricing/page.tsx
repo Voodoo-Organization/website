@@ -507,7 +507,7 @@ export default function Pricing() {
                   </button> */}
 
                   <button
-                    className={`btn-sm px-6 py-3 text-white bg-[#181B20] hover:bg-[#252A32] ${
+                    className={`btn-sm px-6 py-3 text-white bg-[#14171e] hover:bg-[#252A32] ${
                       isFixed ? tablehButtonStyle : ""
                     } ${
                       isYearly
